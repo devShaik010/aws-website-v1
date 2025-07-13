@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { gsap } from 'gsap-trial';
-import { ScrollSmoother } from 'gsap-trial/ScrollSmoother';
-import { ScrollTrigger } from 'gsap-trial/ScrollTrigger';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
+// Register standard plugins
+gsap.registerPlugin(ScrollTrigger);
 
 const ScrollyLoader = ({ onLoadComplete }) => {
   const [isComplete, setIsComplete] = useState(false);
   const [progress, setProgress] = useState(0);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   
-  const textSequence = ['AWS', 'Community', 'Builders', 'Network'];
+  const textSequence = ['MJCET','CLUB', 'Community', 'Builders'];
 
   useEffect(() => {
     const startTime = Date.now();
@@ -60,9 +60,6 @@ const ScrollyLoader = ({ onLoadComplete }) => {
   }, []);
 
   useEffect(() => {
-    gsap.config({ trialWarn: false });
-    
-    let smoother = null;
     let autoScrollTl = null;
     
     const createAutoScroll = () => {
@@ -77,56 +74,27 @@ const ScrollyLoader = ({ onLoadComplete }) => {
       }
     };
     
-    try {
-      if (ScrollSmoother?.create) {
-        smoother = ScrollSmoother.create({
-          wrapper: "#wrapper",
-          content: "#content",
-          smooth: 2,
-          speed: 2,
-          effects: true,
-          normalizeScroll: false,
-          ignoreMobileResize: true
-        });
-        
-        const autoScroll = () => {
-          if (smoother) {
-            smoother.scrollTo("100%", true, "none");
-            setTimeout(() => {
-              smoother.scrollTo("0%", true, "none");
-              autoScroll();
-            }, 3000);
-          }
-        };
-        autoScroll();
-      } else {
-        createAutoScroll();
-      }
-
-      return () => {
-        smoother?.kill();
-        autoScrollTl?.kill();
-      };
-    } catch (error) {
-      createAutoScroll();
-      return () => autoScrollTl?.kill();
-    }
+    createAutoScroll();
+    
+    return () => {
+      autoScrollTl?.kill();
+    };
   }, []);
 
-    const imageUrls = [
-      "/src/components/WebsiteLoader/images/1.jpg",
-      "/src/components/WebsiteLoader/images/2.jpeg", 
-      "/src/components/WebsiteLoader/images/3.jpeg",
-      "/src/components/WebsiteLoader/images/4.jpeg"
-    ];
+  const imageUrls = [
+    "/src/components/WebsiteLoader/images/1.jpg",
+    "/src/components/WebsiteLoader/images/2.jpeg", 
+    "/src/components/WebsiteLoader/images/3.jpeg",
+    "/src/components/WebsiteLoader/images/4.jpeg"
+  ];
 
-    const imageSpeeds = [0.8, 0.9, 1, 1.1];
-    const gridAreas = [
-      '1/1/6/8', '3/12/8/20', '9/5/13/15', '14/1/18/8',
-      '16/12/20/19', '20/2/25/9', '22/11/24/20', '26/5/30/15',
-      '31/1/36/8', '33/12/38/20', '39/5/43/15', '44/1/48/8',
-      '46/12/50/19', '50/2/55/9', '52/11/54/20', '56/5/60/15'
-    ];
+  const imageSpeeds = [0.8, 0.9, 1, 1.1];
+  const gridAreas = [
+    '1/1/6/8', '3/12/8/20', '9/5/13/15', '14/1/18/8',
+    '16/12/20/19', '20/2/25/9', '22/11/24/20', '26/5/30/15',
+    '31/1/36/8', '33/12/38/20', '39/5/43/15', '44/1/48/8',
+    '46/12/50/19', '50/2/55/9', '52/11/54/20', '56/5/60/15'
+  ];
 
   const textStyle = {
     position: 'fixed',
@@ -291,3 +259,4 @@ const ScrollyLoader = ({ onLoadComplete }) => {
 };
 
 export default ScrollyLoader;
+
