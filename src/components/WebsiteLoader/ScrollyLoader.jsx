@@ -82,10 +82,10 @@ const ScrollyLoader = ({ onLoadComplete }) => {
   }, []);
 
   const imageUrls = [
-    "/src/components/WebsiteLoader/images/1.jpg",
-    "/src/components/WebsiteLoader/images/2.jpeg", 
-    "/src/components/WebsiteLoader/images/3.jpeg",
-    "/src/components/WebsiteLoader/images/4.jpeg"
+    "/images/1.jpg",
+    "/images/2.jpeg", 
+    "/images/3.jpeg",
+    "/images/4.jpeg"
   ];
 
   const imageSpeeds = [0.8, 0.9, 1, 1.1];
