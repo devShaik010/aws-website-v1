@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import Lenis from 'lenis'
 import './App.css'
 import Navbar from './components/Navbar/Navbar.jsx'
 import Footer from './components/Footer/Footer.jsx'
@@ -18,6 +19,28 @@ function App() {
   const handleLoadComplete = () => {
     setLoading(false);
   };
+
+  // Initialize Lenis smooth scroll
+  useEffect(() => {
+    if (!loading) {
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smooth: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+
+      return () => {
+        lenis.destroy();
+      };
+    }
+  }, [loading]);
 
   // Optional: Prevent scrolling when loader is active
   useEffect(() => {
@@ -39,7 +62,7 @@ function App() {
         <Router>
           <div className="flex flex-col min-h-screen">
             <Navbar />
-            <main className="flex-grow pt-24">
+            <main className="flex-grow">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
