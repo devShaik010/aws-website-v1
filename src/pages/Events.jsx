@@ -7,27 +7,43 @@ function Events() {
   const upcomingEvents = [
     {
       id: 1,
+      title: "Amazon Q",
+      date: "September 17, 2025",
+      time: "10:30 AM - 2:00 PM",
+      location: "Seminar Hall, MJCET",
+      type: "Workshop",
+      description: "Join us for an exciting workshop on Amazon Q - AWS's new generative AI powered assistant. Learn how Amazon Q revolutionizes developer productivity with AI-powered code suggestions, documentation assistance, and security insights.",
+      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/311011732/",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop",
+      tags: ["Linux", "Amazon Q", "Generative AI", "AWS"]
+    }
+  ];
+
+  const pastEvents = [
+    {
+      id: 1,
       title: "CloudX",
-      date: "October 15, 2025",
+      date: "October 15, 2023",
       time: "10:00 AM - 4:00 PM",
       location: "Seminar Hall, MJCET",
       type: "Workshop",
       description: "Comprehensive hands-on workshop covering AWS fundamentals, EC2, S3, and basic cloud architecture patterns.",
-      registrationLink: "#",
       image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=1000&auto=format&fit=crop",
-      tags: ["Intel", "AI", "Hands-on"]
+      tags: ["Intel", "AI", "Hands-on"],
+      feedback: 4.7
     },
     {
       id: 2,
       title: "Infrastructure Camp",
-      date: "October 22, 2025",
+      date: "October 22, 2023",
       time: "2:00 PM - 6:00 PM",
       location: "Seminar Hall, MJCET",
       type: "Workshop",
       description: "Advanced session on AWS Lambda, API Gateway, and building scalable serverless applications.",
       registrationLink: "#",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
-      tags: ["AWS S3", "IAM", "AWS VPC"]
+      tags: ["AWS S3", "IAM", "AWS VPC"],
+      feedback: 4.6
     },
     {
       id: 3,
@@ -110,12 +126,88 @@ function Events() {
         </div>
       </div>
 
+      {/* Featured Upcoming Event */}
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        <div className="relative">
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
+            {/* Poster Image Side */}
+            <div className="w-full lg:w-1/2">
+              <div className="relative group">
+                <div className="absolute -inset-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl blur opacity-25 group-hover:opacity-40 transition-all duration-300"></div>
+                <img
+                  src={currentEvents[0].image}
+                  alt={currentEvents[0].title}
+                  className="relative rounded-xl w-full object-cover shadow-2xl"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium">
+                    Featured Event
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Event Details Side */}
+            <div className="w-full lg:w-1/2 space-y-6">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                  {currentEvents[0].title}
+                </h2>
+                <p className="text-gray-400 text-lg">Next Upcoming Event</p>
+              </div>
+
+              <p className="text-gray-300 text-lg leading-relaxed">
+                {currentEvents[0].description}
+              </p>
+
+              <div className="space-y-4 py-4">
+                <div className="flex items-center text-gray-300">
+                  <svg className="w-6 h-6 mr-3 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span>{currentEvents[0].date}</span>
+                </div>
+
+                <div className="flex items-center text-gray-300">
+                  <svg className="w-6 h-6 mr-3 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>{currentEvents[0].time}</span>
+                </div>
+
+                <div className="flex items-center text-gray-300">
+                  <svg className="w-6 h-6 mr-3 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span>{currentEvents[0].location}</span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {currentEvents[0].tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex gap-4 pt-4">
+                <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300" onClick={() => window.open(currentEvents[0].registrationLink, "_blank")}>
+                  Register Now
+                </button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Event Tabs */}
       <div className="max-w-6xl mx-auto px-6 py-12">
-        
-
-        
-
         {/* Timeline Events */}
         <motion.div
           key={activeTab}
@@ -127,7 +219,7 @@ function Events() {
           {/* Center Timeline Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-purple-600 to-blue-600" />
 
-          {currentEvents.map((event, index) => (
+          {pastEvents.map((event, index) => (
             <motion.div
               key={event.id}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
