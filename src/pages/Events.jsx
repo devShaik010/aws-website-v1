@@ -14,7 +14,7 @@ function Events() {
       type: "Workshop",
       description: "Join us for an exciting workshop on Amazon Q - AWS's new generative AI powered assistant. Learn how Amazon Q revolutionizes developer productivity with AI-powered code suggestions, documentation assistance, and security insights.",
       registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/311011732/",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/amazon q.jpg",
       tags: ["Linux", "Amazon Q", "Generative AI", "AWS"]
     }
   ];
@@ -22,76 +22,107 @@ function Events() {
   const pastEvents = [
     {
       id: 1,
+      title: "Cloud Ignite'25",
+      date: "May 1 - 31, 2025",
+      time: "-",
+      location: "-",
+      type: "Bootcamp",
+      description: "month-long innovation sprint empowered students to build impactful, cloud-native solutions while working across domains like Artificial Intelligence, Cybersecurity, Internet of Things (IoT), and more",
+      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/308278850/",
+      image: "images/cloud ignite.jpg",
+      tags: ["AWS", "Innovation", "Hands-on"],
+      feedback: 4.7
+    },
+    {
+      id: 2,
       title: "CloudX",
       date: "October 15, 2023",
       time: "10:00 AM - 4:00 PM",
       location: "Seminar Hall, MJCET",
       type: "Workshop",
-      description: "Comprehensive hands-on workshop covering AWS fundamentals, EC2, S3, and basic cloud architecture patterns.",
-      image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=1000&auto=format&fit=crop",
+      description: "The event featured hands-on workshops on Intel’s oneAPI and AWS services, giving participants practical exposure to real-world cloud tools.",
+      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/305556419/",
+      image: "images/cloud x.jpg",
       tags: ["Intel", "AI", "Hands-on"],
       feedback: 4.7
     },
     {
-      id: 2,
+      id: 3,
       title: "Infrastructure Camp",
-      date: "October 22, 2023",
-      time: "2:00 PM - 6:00 PM",
+      date: "Dec 19, 2024",
+      time: "10:00 AM - 4:00 PM",
       location: "Seminar Hall, MJCET",
       type: "Workshop",
-      description: "Advanced session on AWS Lambda, API Gateway, and building scalable serverless applications.",
-      registrationLink: "#",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
+      description: "attendees explored essential AWS services like EC2, S3, VPC, and IAM—understanding not just what they are, but how they power real-world solutions.",
+      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/305118906/",
+      image: "/images/Infra camp.jpg",
       tags: ["AWS S3", "IAM", "AWS VPC"],
-      feedback: 4.6
+      feedback: 4.9
     },
     {
-      id: 3,
+      id: 4,
       title: "Datanyx ",
       date: "November 23, 2025",
       time: "08:30 AM(23 Nov) - 08:30 AM(24 Nov)",
       location: "Ghulam Ahmed Hall, MJCET",
       type: "Hackathon",
       description: "Industry expert from AWS will share insights on cloud career opportunities and emerging technologies.",
-      registrationLink: "#",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=1000&auto=format&fit=crop",
-      tags: ["Career", "Industry", "Hacathon"]
+      registrationLink: "https://datanyx.in/",
+      image: "/images/Datathon2k24.jpg",
+      tags: ["Career", "Industry", "Hackathon"]
     },
     {
-      id: 4,
+      id: 5,
+      title: "ML API CAMP",
+      date: "26th July 2024",
+      time: "9:00 AM - 4:00 PM",
+      location: "Seminar Hall, MJCET",
+      type: "Workshop",
+      description: " hosted an insightful Machine Learning API Workshop on November 16, 2024, aimed at bridging theoretical knowledge with real-world application of machine learning through AWS services.",
+      registrationLink: "#",
+      image: "/images/ML-API.jpg",
+      tags: ["Architecture", "Solutions", "Advanced"],
+      attendees: 85,
+      feedback: 4.8
+    },
+    {
+      id: 6,
       title: "Imagify 2.0",
       date: "26th July 2024",
       time: "9:00 AM - 4:00 PM",
       location: "Seminar Hall, MJCET",
       type: "Workshop",
       description: "Intensive workshop on AWS Solutions Architect concepts with hands-on labs and real-world scenarios.",
-      image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1000&auto=format&fit=crop",
+      registrationLink: "#",
+      image: "/images/imagify.jpg",
       tags: ["Architecture", "Solutions", "Advanced"],
       attendees: 85,
       feedback: 4.8
     },
     {
-      id: 5,
+      id: 7,
       title: "Orientation Day",
       date: "August 17, 2024",
       time: "11:00 AM - 12:00 PM",
       location: "Seminar Hall, SU knowledge Hub",
       type: "Meetup",
       description: "Comprehensive session on AWS security best practices, IAM, and compliance frameworks.",
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop",
+      registrationLink: "#",
+      image: "images/orientationday.jpeg",
       tags: ["Security", "IAM", "Compliance"],
       attendees: 100,
       feedback: 4.9
     },
     {
-      id: 6,
+      id: 8,
       title: "Inauguration Ceremony",
       date: "June 28, 2024",
       time: "10:00 AM - 12:00 PM",
       location: "Seminar Hall, MJCET",
       type: "Launch Event",
       description: "On 28th June 2024, we hosted an engaging event from 10:00AM to 12:00PM at the Block 4 Seminar Hall. Attendees had the opportunity to connect, learn, and collaborate on various topics related to cloud computing and Amazon Web Services (AWS). The inauguration of our club featured the esteemed presence of Mr. Faizal Khan, Community Lead of the AWS User Group and AWS Community Hero, as the distinguished Chief Guest.",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=1000&auto=format&fit=crop",
+      registrationLink: "#",
+      image: "/images/inauguration.jpg",
       tags: ["Launch", "Networking", "Introduction"],
       attendees: 120,
       feedback: 4.7
@@ -233,23 +264,38 @@ function Events() {
               <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full border-4 border-gray-900" />
 
               {/* Event Card */}
-              <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+              <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'pr-4 md:pr-8' : 'pl-4 md:pl-8'}`}>
                 <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group">
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative min-h-[200px] max-h-[400px] overflow-hidden">
                     <img 
                       src={event.image} 
                       alt={event.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                      style={{ 
+                        // backgroundColor: 'rgb(17, 24, 39)',
+                        maxHeight: '400px',
+                        margin: '0 auto',
+                        // padding: event.image.includes('Datathon') ? '12px' : '0px' // Special padding for Datathon image
+                      }}
+                      onLoad={(e) => {
+                        // Adjust container height based on image ratio
+                        const img = e.target;
+                        const container = img.parentElement;
+                        if (img.naturalHeight > img.naturalWidth) {
+                          container.style.height = 'auto';
+                          container.style.maxHeight = '400px';
+                        }
+                      }}
                     />
-                    <div className="absolute top-4 left-4">
+                    <div className="absolute top-4 left-4 z-10">
                       <span className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                         {event.type}
                       </span>
                     </div>
                   </div>
                   
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3 text-white group-hover:text-purple-400 transition-colors">
+                  <div className="p-4 md:p-6">
+                    <h3 className="text-lg md:text-xl font-bold mb-3 text-white group-hover:text-purple-400 transition-colors">
                       {event.title}
                     </h3>
                     
@@ -279,30 +325,32 @@ function Events() {
                       {event.tags.map((tag, tagIndex) => (
                         <span 
                           key={tagIndex}
-                          className="bg-purple-500/20 text-purple-300 px-2 py-1 rounded-md text-xs"
+                          className="bg-purple-500/20 text-purple-300 px-2 py-1 rounded-md text-xs md:text-sm whitespace-nowrap"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    {activeTab === 'upcoming' ? (
-                      <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300">
-                        Register Now
-                      </button>
-                    ) : (
-                      <div className="flex justify-between items-center">
+                    {/* Feedback section with responsive layout */}
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                      {event.feedback && (
                         <div className="flex items-center text-yellow-400">
                           <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
                           <span className="text-sm font-medium">{event.feedback}</span>
                         </div>
-                        <button className="text-purple-400 hover:text-purple-300 text-sm font-medium">
-                          View Details →
-                        </button>
-                      </div>
-                    )}
+                      )}
+                      <button 
+                        onClick={() => event.registrationLink && window.open(event.registrationLink, "_blank")}
+                        className={`text-purple-400 hover:text-purple-300 text-sm font-medium ${
+                          event.registrationLink ? 'cursor-pointer' : 'cursor-not-allowed opacity-50'
+                        }`}
+                      >
+                        {event.registrationLink ? 'View Details →' : 'No Link Available'}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -322,11 +370,11 @@ function Events() {
             Join our community to receive exclusive invitations and early bird discounts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300">
+            <button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300" onClick={() => window.open('https://www.meetup.com/aws-cloud-club-mjcet/', "_blank")}>
               Join Our Community
             </button>
-            <button className="border border-purple-500 text-purple-400 hover:bg-purple-500/10 font-medium py-3 px-8 rounded-lg transition-all duration-300">
-              View Event Calendar
+            <button className="border border-purple-500 text-purple-400 hover:bg-purple-500/10 font-medium py-3 px-8 rounded-lg transition-all duration-300" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeFZHIXnUFz46NuwibriOUkL7rEjk-PQetA8X0z2o9TCQK4pA/viewform', "_blank")}>
+              Become a member
             </button>
           </div>
         </div>
