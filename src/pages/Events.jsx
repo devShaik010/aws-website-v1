@@ -12,7 +12,7 @@ function Events() {
       time: "10:30 AM - 2:00 PM",
       location: "Seminar Hall, MJCET",
       type: "Workshop",
-      description: "Join us for an exciting workshop on Amazon Q - AWS's new generative AI powered assistant. Learn how Amazon Q revolutionizes developer productivity with AI-powered code suggestions, documentation assistance, and security insights.",
+      description: "An exciting hands-on workshop designed to simplify Linux, explore game development, and provide direct learning from the AWS Community.",
       registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/311011732/",
       image: "/images/amazon q.jpg",
       tags: ["Linux", "Amazon Q", "Generative AI", "AWS"]
@@ -36,7 +36,7 @@ function Events() {
     {
       id: 2,
       title: "CloudX",
-      date: "October 15, 2023",
+      date: "18th Jan, 2023",
       time: "10:00 AM - 4:00 PM",
       location: "Seminar Hall, MJCET",
       type: "Workshop",
@@ -74,14 +74,14 @@ function Events() {
     {
       id: 5,
       title: "ML API CAMP",
-      date: "26th July 2024",
+      date: "16th Nov 2024",
       time: "9:00 AM - 4:00 PM",
       location: "Seminar Hall, MJCET",
       type: "Workshop",
       description: " hosted an insightful Machine Learning API Workshop on November 16, 2024, aimed at bridging theoretical knowledge with real-world application of machine learning through AWS services.",
       registrationLink: "#",
       image: "/images/ML-API.jpg",
-      tags: ["Architecture", "Solutions", "Advanced"],
+      tags: ["aws rekognition", "Amazon bedrock", "API"],
       attendees: 85,
       feedback: 4.8
     },
