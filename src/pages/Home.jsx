@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -7,6 +7,62 @@ gsap.registerPlugin(ScrollTrigger);
 function Home() {
   const heroRef = useRef(null);
   const contentRef = useRef(null);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  // Testimonials data
+  const testimonials = [
+    {
+      quote: "Joining MJCET AWS Cloud Club was the best decision of my academic journey. The workshops on EC2 and S3 were incredibly hands-on. I learned more in 3 months than entire semester!",
+      name: "Mohammed Zubair",
+      role: "3rd Year CSE Student",
+      company: "MJCET"
+    },
+    {
+      quote: "The AWS certification bootcamp helped me clear my Cloud Practitioner exam. The study materials and mock tests were excellent. Now I'm preparing for Solutions Architect!",
+      name: "Fatima Shaikh",
+      role: "Final Year IT Student",
+      company: "MJCET"
+    },
+    {
+      quote: "I attended the serverless workshop last month and built my first Lambda function! The mentors explained everything so clearly. Can't wait for the next event.",
+      name: "Abdul Rahman",
+      role: "2nd Year ECE Student",
+      company: "MJCET"
+    },
+    {
+      quote: "The hackathon organized by the club was amazing! We built a complete web application using AWS services. Won 2nd prize and learned so much about cloud architecture.",
+      name: "Ayesha Khan",
+      role: "3rd Year CSE Student",
+      company: "MJCET"
+    },
+    {
+      quote: "From knowing nothing about cloud to getting an internship at a tech startup - all thanks to the practical training and project guidance from our club seniors.",
+      name: "Syed Imran",
+      role: "Final Year IT Student",
+      company: "MJCET"
+    },
+    {
+      quote: "The weekly study sessions helped me understand Docker and Kubernetes better. The peer learning environment is fantastic and everyone is so supportive!",
+      name: "Arjun Reddy",
+      role: "3rd Year CSE Student",
+      company: "MJCET"
+    },
+    {
+      quote: "Attended the industry expert session on DevOps. Got to learn about real-world AWS implementations and best practices. Such valuable insights for students like us!",
+      name: "Zainab Hussain",
+      role: "2nd Year IT Student",
+      company: "MJCET"
+    }
+  ];
+
+  useEffect(() => {
+    // Auto-rotate testimonials
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
 
   useEffect(() => {
     // GSAP Animations
@@ -191,7 +247,7 @@ function Home() {
       </div>
 
       {/* Our Speciality Section */}
-      <div className="relative py-20 bg-gray-950">
+      <div className="relative py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -212,12 +268,15 @@ function Home() {
             {/* Service 1 - AWS Training */}
             <div className="group relative">
               <div className="text-center">
-                {/* Icon */}
+                {/* Image */}
                 <div className="relative mb-6">
-                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
+                  <div className="w-20 h-20 mx-auto rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-300">
+                    <img 
+                      src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=200&auto=format&fit=crop" 
+                      alt="AWS Training"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/30"></div>
                   </div>
                 </div>
                 
@@ -230,7 +289,7 @@ function Home() {
                 </p>
                 
                 {/* Number */}
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-6xl font-bold text-white/10" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-6xl font-bold text-white/5" style={{ fontFamily: 'Inter, sans-serif' }}>
                   01
                 </div>
               </div>
@@ -239,12 +298,15 @@ function Home() {
             {/* Service 2 - Certification Prep */}
             <div className="group relative">
               <div className="text-center">
-                {/* Icon */}
+                {/* Image */}
                 <div className="relative mb-6">
-                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                    </svg>
+                  <div className="w-20 h-20 mx-auto rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-300">
+                    <img 
+                      src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=200&auto=format&fit=crop" 
+                      alt="Certification Prep"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/30"></div>
                   </div>
                 </div>
                 
@@ -257,7 +319,7 @@ function Home() {
                 </p>
                 
                 {/* Number */}
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-6xl font-bold text-white/10" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-6xl font-bold text-white/5" style={{ fontFamily: 'Inter, sans-serif' }}>
                   02
                 </div>
               </div>
@@ -266,12 +328,15 @@ function Home() {
             {/* Service 3 - Project Guidance */}
             <div className="group relative">
               <div className="text-center">
-                {/* Icon */}
+                {/* Image */}
                 <div className="relative mb-6">
-                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
+                  <div className="w-20 h-20 mx-auto rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-300">
+                    <img 
+                      src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=200&auto=format&fit=crop" 
+                      alt="Project Guidance"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/30"></div>
                   </div>
                 </div>
                 
@@ -284,7 +349,7 @@ function Home() {
                 </p>
                 
                 {/* Number */}
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-6xl font-bold text-white/10" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-6xl font-bold text-white/5" style={{ fontFamily: 'Inter, sans-serif' }}>
                   03
                 </div>
               </div>
@@ -293,12 +358,15 @@ function Home() {
             {/* Service 4 - Career Support */}
             <div className="group relative">
               <div className="text-center">
-                {/* Icon */}
+                {/* Image */}
                 <div className="relative mb-6">
-                  <div className="w-20 h-20 mx-auto bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
+                  <div className="w-20 h-20 mx-auto rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-300">
+                    <img 
+                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=200&auto=format&fit=crop" 
+                      alt="Career Support"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/30"></div>
                   </div>
                 </div>
                 
@@ -311,11 +379,124 @@ function Home() {
                 </p>
                 
                 {/* Number */}
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-6xl font-bold text-white/10" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-6xl font-bold text-white/5" style={{ fontFamily: 'Inter, sans-serif' }}>
                   04
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonials Section */}
+      <div className="relative py-20 bg-gray-950">
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <span className="text-white/60 text-sm font-medium tracking-wider uppercase mb-4 block" style={{ fontFamily: 'Inter, sans-serif' }}>
+              What Our Members Say
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
+              Success Stories
+              <span className="block text-white/90">from Our Community</span>
+            </h2>
+          </div>
+
+          {/* Testimonials Carousel */}
+          <div className="relative">
+            {/* Main Testimonial Display */}
+            <div className="text-center min-h-[300px] flex items-center justify-center">
+              <div className="max-w-4xl mx-auto">
+                {/* Quote */}
+                <div className="mb-8">
+                  <svg className="w-16 h-16 text-white/20 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                  </svg>
+                  <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-light italic" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    "{testimonials[currentTestimonial].quote}"
+                  </p>
+                </div>
+
+                {/* Author Info */}
+                <div className="border-t border-white/10 pt-6">
+                  <h4 className="text-lg font-semibold text-white mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    {testimonials[currentTestimonial].name}
+                  </h4>
+                  <p className="text-white/60 text-sm" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    {testimonials[currentTestimonial].role}
+                  </p>
+                  <p className="text-white/40 text-xs mt-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    {testimonials[currentTestimonial].company}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation Dots */}
+            <div className="flex justify-center space-x-3 mt-8">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentTestimonial 
+                      ? 'bg-white' 
+                      : 'bg-white/30 hover:bg-white/50'
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group"
+            >
+              <svg className="w-6 h-6 text-white group-hover:text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <button
+              onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group"
+            >
+              <svg className="w-6 h-6 text-white group-hover:text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Multiple Quotes Display - Secondary */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            {[0, 1, 2].map((offset) => {
+              const index = (currentTestimonial + offset) % testimonials.length;
+              return (
+                <div 
+                  key={index}
+                  className={`p-6 bg-black/30 border border-white/10 rounded-lg transition-all duration-500 ${
+                    offset === 0 ? 'ring-1 ring-white/20' : 'opacity-70'
+                  }`}
+                >
+                  <div className="mb-4">
+                    <svg className="w-8 h-8 text-white/30 mb-3" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                    </svg>
+                    <p className="text-white/80 text-sm leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      "{testimonials[index].quote.substring(0, 120)}..."
+                    </p>
+                  </div>
+                  <div className="border-t border-white/10 pt-3">
+                    <h5 className="text-white font-medium text-sm" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      {testimonials[index].name}
+                    </h5>
+                    <p className="text-white/50 text-xs" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      {testimonials[index].role}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
