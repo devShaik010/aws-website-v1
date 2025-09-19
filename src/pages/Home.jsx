@@ -90,21 +90,44 @@ function Home() {
         {/* Inter Font Import */}
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
         
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
+        {/* Video Background */}
+        <div className="hero-video-container">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="hero-video"
+            onError={(e) => {
+              console.log('Video failed to load:', e);
+              // Hide video container if video fails to load
+              e.target.parentElement.style.display = 'none';
+            }}
+          >
+            <source src="/images/reel.mp4" type="video/mp4" />
+            {/* Fallback for browsers that don't support video */}
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        {/* Subtle Background Pattern - Reduced opacity since we have video */}
+        <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full blur-xl animate-pulse"></div>
           <div className="absolute top-40 right-20 w-24 h-24 bg-white/5 rounded-full blur-lg animate-pulse delay-75"></div>
           <div className="absolute bottom-40 left-20 w-28 h-28 bg-white/5 rounded-full blur-lg animate-pulse delay-150"></div>
           <div className="absolute bottom-20 right-10 w-36 h-36 bg-white/5 rounded-full blur-xl animate-pulse delay-300"></div>
         </div>
 
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
+        {/* Enhanced Gradient Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/70" />
 
         {/* Hero Content */}
         <div 
           ref={contentRef}
           className="relative z-10 text-center max-w-4xl mx-auto px-6"
+          style={{
+            textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)'
+          }}
         >
           {/* New Badge */}
           <div className="mb-4">
@@ -168,8 +191,8 @@ function Home() {
               <div className="relative group">
                 <div className="relative overflow-hidden rounded-2xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=800&auto=format&fit=crop" 
-                    alt="AWS Workshop"
+                    src="/images/team-1.jpg" 
+                    alt="MJCET AWS Cloud Club Team"
                     className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/20"></div>
@@ -177,11 +200,11 @@ function Home() {
               </div>
 
               {/* Small image - top right */}
-              <div className="absolute -top-8 -right-4 w-32 h-24 group">
+              <div className="absolute -top-8 -right-4 w-40 h-32 group">
                 <div className="relative overflow-hidden rounded-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop" 
-                    alt="Cloud Computing"
+                    src="/images/team-2.jpg" 
+                    alt="Cloud Computing Workshop"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/20"></div>
@@ -192,20 +215,8 @@ function Home() {
               <div className="absolute -bottom-6 -left-6 w-40 h-32 group">
                 <div className="relative overflow-hidden rounded-xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=400&auto=format&fit=crop" 
+                    src="/images/team-3.jpg" 
                     alt="Team Collaboration"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/20"></div>
-                </div>
-              </div>
-
-              {/* Small accent image - middle right */}
-              <div className="absolute top-1/2 -right-8 w-24 h-20 group">
-                <div className="relative overflow-hidden rounded-lg">
-                  <img 
-                    src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=400&auto=format&fit=crop" 
-                    alt="AWS Certification"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/20"></div>
@@ -272,7 +283,7 @@ function Home() {
                 <div className="relative mb-6">
                   <div className="w-20 h-20 mx-auto rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-300">
                     <img 
-                      src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=200&auto=format&fit=crop" 
+                      src="/images/AWS-Training.jpg" 
                       alt="AWS Training"
                       className="w-full h-full object-cover"
                     />
@@ -302,7 +313,7 @@ function Home() {
                 <div className="relative mb-6">
                   <div className="w-20 h-20 mx-auto rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-300">
                     <img 
-                      src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=200&auto=format&fit=crop" 
+                      src="/images/Certification-Prep.webp" 
                       alt="Certification Prep"
                       className="w-full h-full object-cover"
                     />
@@ -332,7 +343,7 @@ function Home() {
                 <div className="relative mb-6">
                   <div className="w-20 h-20 mx-auto rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-300">
                     <img 
-                      src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=200&auto=format&fit=crop" 
+                      src="/images/Project-Guidance.png" 
                       alt="Project Guidance"
                       className="w-full h-full object-cover"
                     />
@@ -362,7 +373,7 @@ function Home() {
                 <div className="relative mb-6">
                   <div className="w-20 h-20 mx-auto rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-300">
                     <img 
-                      src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=200&auto=format&fit=crop" 
+                      src="/images/Career-Support.png" 
                       alt="Career Support"
                       className="w-full h-full object-cover"
                     />
