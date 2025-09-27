@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../../lib/utils";
 
+const membershipFormLink = "https://docs.google.com/forms/d/e/1FAIpQLSeFZHIXnUFz46NuwibriOUkL7rEjk-PQetA8X0z2o9TCQK4pA/viewform";
+
 // Navigation items
 const navItems = [
   { name: "Home", link: "/" },
@@ -54,14 +56,15 @@ const Navbar = () => {
             <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
           </Link>
         ))}
-        <button
-          className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full"
+        <a
+          href={membershipFormLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full hover:bg-white/10 transition-colors"
         >
           <span>Membership</span>
-          <span
-            className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" 
-          />
-        </button>
+          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
+        </a>
       </motion.div>
 
       {/* Mobile Navigation Button */}
@@ -136,8 +139,10 @@ const Navbar = () => {
                 transition={{ delay: navItems.length * 0.1 }}
                 className="mt-8"
               >
-                <Link 
-                  to="/membership"
+                <a 
+                  href={membershipFormLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center py-1 text-2xl font-normal text-gray-500 hover:text-gray-700"
                   onClick={toggleMenu}
                 >
@@ -150,7 +155,7 @@ const Navbar = () => {
                       <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
                     </svg>
                   </motion.div>
-                </Link>
+                </a>
               </motion.div>
             </div>
             
