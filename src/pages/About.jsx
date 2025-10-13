@@ -24,7 +24,7 @@ function About() {
             </h1>
             
             <p className="text-gray-300 text-lg leading-relaxed">
-              Welcome to the AWS User Group at MJCET! We are a community of cloud enthusiasts, 
+              Welcome to the AWS Cloud club at MJCET! We are a community of cloud enthusiasts, 
               developers, and future architects passionate about Amazon Web Services technology.
             </p>
 

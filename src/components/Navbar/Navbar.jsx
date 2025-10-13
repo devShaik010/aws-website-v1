@@ -10,9 +10,10 @@ const navItems = [
   { name: "Home", link: "/" },
   { name: "About", link: "/about" },
   { name: "Events", link: "/events" },
-  { name: "Achievements", link: "/achievements" },
-  { name: "Playground", link: "/playground" },
+  // { name: "Achievements", link: "/achievements" },
+  // { name: "Playground", link: "/playground" },
   { name: "Contact", link: "/contact" },
+  { name: "Gallery", link: "/gallery" },
 ];
 
 const socialLinks = [

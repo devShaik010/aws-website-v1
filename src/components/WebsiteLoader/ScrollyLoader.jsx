@@ -16,7 +16,7 @@ const ScrollyLoader = ({ onLoadComplete }) => {
     const duration = 6000;
     const updateProgress = () => {
       const elapsed = Date.now() - startTime;
-      const currentProgress = Math.min((elapsed / duration) * 100, 100);
+      const currentProgress = Math.min((elapsed / duration) * 380, 100);
       setProgress(currentProgress);
       if (currentProgress < 100) {
         requestAnimationFrame(updateProgress);
@@ -66,7 +66,9 @@ const ScrollyLoader = ({ onLoadComplete }) => {
     "/images/1.jpg",
     "/images/2.jpeg",
     "/images/3.jpeg",
-    "/images/4.jpeg"
+    "/images/4.jpeg",
+    "/images/5.jpg",
+    "/images/6.jpg"
   ];
   const imageSpeeds = [0.8, 0.9, 1, 1.1];
   const gridAreas = [
@@ -155,7 +157,7 @@ const ScrollyLoader = ({ onLoadComplete }) => {
       <div style={{
         position: 'fixed',
         inset: 0,
-        background: 'linear-gradient(180deg, #000 60%, rgba(0,0,0,0.7) 100%)',
+        background: 'linear-gradient(180deg, #000000e6 60%, rgba(0,0,0,0.7) 100%)',
         zIndex: 10,
         pointerEvents: 'none',
         opacity: 0.85
