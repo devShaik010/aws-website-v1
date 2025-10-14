@@ -7,6 +7,21 @@ function Events() {
   const upcomingEvents = [
     {
       id: 1,
+      title: "Datanyx 2025",
+      date: "Nov 22 - 23, 2025",
+      time: "9:00 AM(22-Nov) - 9:00 AM(23-Nov)",
+      location: "Ghulam Ahmed Hall, MJCET",
+      type: "Datathon",
+      description: "The Flagship event of AWS cloud club and IEEE SMC, 24-hour datathon event where students from various colleges come together to solve real-world problems using data science and machine learning. An event open to all enthusiastic minds across india.",
+      registrationLink: "https://datanyx.in/",
+      image: "/images/datanyx.png",
+      tags: ["Datathon", "AI ML", "Team building", "AWS", "Networking"]
+    }
+  ];
+
+  const pastEvents = [
+    {
+      id: 1,
       title: "Amazon Q",
       date: "September 17, 2025",
       time: "10:30 AM - 2:00 PM",
@@ -16,12 +31,9 @@ function Events() {
       registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/311011732/",
       image: "/images/amazon q.jpg",
       tags: ["Linux", "Amazon Q", "Generative AI", "AWS"]
-    }
-  ];
-
-  const pastEvents = [
+    },
     {
-      id: 1,
+      id: 2,
       title: "Cloud Ignite'25",
       date: "May 1 - 31, 2025",
       time: "-",
@@ -34,7 +46,7 @@ function Events() {
       feedback: 4.7
     },
     {
-      id: 2,
+      id: 3,
       title: "CloudX",
       date: "18th Jan, 2023",
       time: "10:00 AM - 4:00 PM",
@@ -47,7 +59,7 @@ function Events() {
       feedback: 4.7
     },
     {
-      id: 3,
+      id: 4,
       title: "Infrastructure Camp",
       date: "Dec 19, 2024",
       time: "10:00 AM - 4:00 PM",
@@ -60,7 +72,7 @@ function Events() {
       feedback: 4.9
     },
     {
-      id: 4,
+      id: 5,
       title: "Datanyx ",
       date: "November 23, 2025",
       time: "08:30 AM(23 Nov) - 08:30 AM(24 Nov)",
@@ -72,30 +84,16 @@ function Events() {
       tags: ["Career", "Industry", "Hackathon"]
     },
     {
-      id: 5,
+      id: 6,
       title: "ML API CAMP",
       date: "16th Nov 2024",
       time: "9:00 AM - 4:00 PM",
       location: "Seminar Hall, MJCET",
       type: "Workshop",
       description: " hosted an insightful Machine Learning API Workshop on November 16, 2024, aimed at bridging theoretical knowledge with real-world application of machine learning through AWS services.",
-      registrationLink: "#",
+      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/304520855/",
       image: "/images/ML-API.jpg",
       tags: ["aws rekognition", "Amazon bedrock", "API"],
-      attendees: 85,
-      feedback: 4.8
-    },
-    {
-      id: 6,
-      title: "Imagify 2.0",
-      date: "26th July 2024",
-      time: "9:00 AM - 4:00 PM",
-      location: "Seminar Hall, MJCET",
-      type: "Workshop",
-      description: "Intensive workshop on AWS Solutions Architect concepts with hands-on labs and real-world scenarios.",
-      registrationLink: "#",
-      image: "/images/imagify.jpg",
-      tags: ["Architecture", "Solutions", "Advanced"],
       attendees: 85,
       feedback: 4.8
     },
@@ -115,13 +113,27 @@ function Events() {
     },
     {
       id: 8,
+      title: "Imagify 2.0",
+      date: "26th July 2024",
+      time: "9:00 AM - 4:00 PM",
+      location: "Seminar Hall, MJCET",
+      type: "Workshop",
+      description: "Intensive workshop on AWS Solutions Architect concepts with hands-on labs and real-world scenarios.",
+      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/302364001/",
+      image: "/images/imagify.jpg",
+      tags: ["Architecture", "Solutions", "Advanced"],
+      attendees: 85,
+      feedback: 4.8
+    },
+    {
+      id: 9,
       title: "Inauguration Ceremony",
       date: "June 28, 2024",
       time: "10:00 AM - 12:00 PM",
       location: "Seminar Hall, MJCET",
       type: "Launch Event",
       description: "On 28th June 2024, we hosted an engaging event from 10:00AM to 12:00PM at the Block 4 Seminar Hall. Attendees had the opportunity to connect, learn, and collaborate on various topics related to cloud computing and Amazon Web Services (AWS). The inauguration of our club featured the esteemed presence of Mr. Faizal Khan, Community Lead of the AWS User Group and AWS Community Hero, as the distinguished Chief Guest.",
-      registrationLink: "#",
+      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/301796921/",
       image: "/images/inauguration.jpg",
       tags: ["Launch", "Networking", "Introduction"],
       attendees: 120,
@@ -159,83 +171,90 @@ function Events() {
 
       {/* Featured Upcoming Event */}
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="relative">
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
-            {/* Poster Image Side */}
-            <div className="w-full lg:w-1/2">
-              <div className="relative group">
-                <div className="absolute -inset-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl blur opacity-25 group-hover:opacity-40 transition-all duration-300"></div>
-                <img
-                  src={currentEvents[0].image}
-                  alt={currentEvents[0].title}
-                  className="relative rounded-xl w-full object-cover shadow-2xl"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-                    Featured Event
-                  </span>
+    <div className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
+        <div className="flex flex-col lg:flex-row gap-12 lg:pb-15 lg:pt-15 items-center">
+            
+            {/* Poster Image Side - NEW CLASSES ADDED HERE */}
+            {/* 1. w-full lg:w-1/2: Keeps the column width at half.
+                2. flex justify-center: Centers the content (the image) within this column.
+            */}
+            <div className="w-full lg:w-1/2 flex justify-center">
+                <div className="relative group">
+                    {/* 3. max-w-lg: This is the key change. 
+                           It limits the image container's maximum width to 32rem (512px) 
+                           on all screen sizes, preventing it from growing too large.
+                    */}
+                    <div className="max-w-lg"> 
+                        <div className="absolute -inset-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl blur opacity-25 group-hover:opacity-40 transition-all duration-300"></div>
+                        <img
+                            src={currentEvents[0].image}
+                            alt={currentEvents[0].title}
+                            className="relative rounded-xl w-full object-cover shadow-2xl"
+                        />
+                        <div className="absolute top-4 left-4">
+                            <span className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium">
+                                Featured Event
+                            </span>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
 
-            {/* Event Details Side */}
+            {/* Event Details Side (No changes needed here) */}
             <div className="w-full lg:w-1/2 space-y-6">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                  {currentEvents[0].title}
-                </h2>
-                <p className="text-gray-400 text-lg">Next Upcoming Event</p>
-              </div>
-
-              <p className="text-gray-300 text-lg leading-relaxed">
-                {currentEvents[0].description}
-              </p>
-
-              <div className="space-y-4 py-4">
-                <div className="flex items-center text-gray-300">
-                  <svg className="w-6 h-6 mr-3 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span>{currentEvents[0].date}</span>
+                <div className="space-y-2">
+                    <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                        {currentEvents[0].title}
+                    </h2>
+                    <p className="text-gray-400 text-lg">Next Upcoming Event</p>
                 </div>
 
-                <div className="flex items-center text-gray-300">
-                  <svg className="w-6 h-6 mr-3 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>{currentEvents[0].time}</span>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                    {currentEvents[0].description}
+                </p>
+                {/* ... (Date, Time, Location) ... */}
+                <div className="space-y-4 py-4">
+                    <div className="flex items-center text-gray-300">
+                        <svg className="w-6 h-6 mr-3 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>{currentEvents[0].date}</span>
+                    </div>
+                    <div className="flex items-center text-gray-300">
+                        <svg className="w-6 h-6 mr-3 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>{currentEvents[0].time}</span>
+                    </div>
+                    <div className="flex items-center text-gray-300">
+                        <svg className="w-6 h-6 mr-3 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span>{currentEvents[0].location}</span>
+                    </div>
                 </div>
 
-                <div className="flex items-center text-gray-300">
-                  <svg className="w-6 h-6 mr-3 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span>{currentEvents[0].location}</span>
+                <div className="flex flex-wrap gap-2">
+                    {currentEvents[0].tags.map((tag, index) => (
+                        <span
+                            key={index}
+                            className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm"
+                        >
+                            {tag}
+                        </span>
+                    ))}
                 </div>
-              </div>
 
-              <div className="flex flex-wrap gap-2">
-                {currentEvents[0].tags.map((tag, index) => (
-                  <span
-                    key={index}
-                    className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex gap-4 pt-4">
-                <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300" onClick={() => window.open(currentEvents[0].registrationLink, "_blank")}>
-                  Register Now
-                </button>
-                
-              </div>
+                <div className="flex gap-4 pt-4">
+                    <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300" onClick={() => window.open(currentEvents[0].registrationLink, "_blank")}>
+                        Register Now
+                    </button>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
 
       {/* Event Tabs */}
       <div className="max-w-6xl mx-auto px-6 py-12">

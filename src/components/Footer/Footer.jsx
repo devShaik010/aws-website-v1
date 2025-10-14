@@ -21,13 +21,13 @@ const Footer = () => {
   // Team members data
   const governingBody = [
     { id: 1, name: 'Vahaj ur Rahman', designation: 'Captain', image: '/images/profiles/vahaj.png'},
-    { id: 2, name: 'Zaid Ali Khan', designation: 'Vice Captain', image: '/images/profiles/zaid.jpg', profile: '/team/sarah-johnson' },
-    { id: 3, name: 'Nahid Sami', designation: 'Secretary', image: '/images/profiles/nahid.jpg', profile: '/team/michael-wong' },
-    { id: 4, name: 'Affah ullah shaik', designation: 'Treasurer', image: '/images/profiles/afham.jpg', profile: '/team/emily-chen' },
-    { id: 5, name: 'Sidra Aleem', designation: 'Chief Representative', image: '/images/profiles/sidra.jpg', profile: '/team/david-kumar' },
-    { id: 6, name: 'Saad Riyan', designation: 'Chief Coordinator', image: '/images/profiles/saad.png', profile: '/team/lisa-patel' },
-    { id: 7, name: 'Musab Umayr', designation: 'Outreach Director', image: '/images/profiles/musab.jpg', profile: '/team/lisa-patel' },
-    { id: 8, name: 'Shaik Abrar', designation: 'Technical Coordinator', image: '/images/profiles/abrar.jpg', profile: '/team/lisa-patel' },
+    { id: 2, name: 'Zaid Ali Khan', designation: 'Vice Captain', image: '/images/profiles/zaid.jpg'},
+    { id: 3, name: 'Nahid Sami', designation: 'Secretary', image: '/images/profiles/nahid.jpg' },
+    { id: 4, name: 'Affah ullah shaik', designation: 'Treasurer', image: '/images/profiles/afham.jpg' },
+    { id: 5, name: 'Sidra Aleem', designation: 'Chief Representative', image: '/images/profiles/sidra.jpg' },
+    { id: 6, name: 'Saad Riyan', designation: 'Chief Coordinator', image: '/images/profiles/saad.png' },
+    { id: 7, name: 'Musab Umayr', designation: 'Outreach Director', image: '/images/profiles/musab.jpg' },
+    { id: 8, name: 'Shaik Abrar', designation: 'Technical Coordinator', image: '/images/profiles/abrar.jpg' },
 
   ];
 
@@ -93,7 +93,7 @@ const Footer = () => {
                   <ul className="space-y-2">
                     {section.items.map((item) => (
                       <li key={item}>
-                        <Link to="#" className="text-gray-400 hover:text-white transition-colors">
+                        <Link to="https://www.meetup.com/aws-cloud-club-mjcet/" className="text-gray-400 hover:text-white transition-colors">
                           {item}
                         </Link>
                       </li>

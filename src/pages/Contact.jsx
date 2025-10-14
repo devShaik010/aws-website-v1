@@ -68,8 +68,8 @@ const Card = ({ title, description, imageUrl, linkUrl, buttonText, buttonColor }
 
 const ContactFormSection = () => (
     <div className="py-20 " id='contact'> {/* Add ample padding before the form section */}
-        <div className="mx-auto max-w-7xl px-4 md:px-8 border border-gray-700 shadow-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 rounded-xl bg-gray-900">
+        <div className="mx-auto max-w-7xl px-4 md:px-8 border border-gray-700 rounded-xl shadow-2xl bg-gray-900">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 rounded-xl ">
                 
                 {/* Left Side: Text and Contact Info */}
                 <div className="text-white">
@@ -164,7 +164,7 @@ const ContactFormSection = () => (
 
 function Contact() {
     return (
-        <div className="bg-gray-50 dark:bg-gray-900 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+        <div className="bg-gray-50 dark:bg-gray-900/80 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
                 
                 {/* Header */}

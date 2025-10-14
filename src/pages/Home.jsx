@@ -183,7 +183,7 @@ function Home() {
       </div>
 
       {/* About Us Section */}
-      <div className="relative py-20 bg-gray-900">
+      <div className="relative py-20 bg-gray-900/80">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
@@ -264,7 +264,7 @@ function Home() {
       </div>
 
       {/* Our Speciality Section */}
-      <div className="relative py-20 bg-gray-900">
+      <div className="relative py-20 bg-gray-900/80">
         <div className="max-w-7xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -406,7 +406,7 @@ function Home() {
       </div>
 
       {/* Testimonials Section */}
-      <div className="relative py-20 bg-gray-900">
+      <div className="relative py-20 bg-gray-900/80">
         <div className="max-w-6xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-16">
