@@ -32,7 +32,7 @@ const socialCards = [
 
 // Reusable Card Component based on the provided HTML structure
 const Card = ({ title, description, imageUrl, linkUrl, buttonText, buttonColor }) => (
-    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-xl dark:bg-gray-800 dark:border-gray-700 transition duration-300 transform hover:scale-[1.03] flex flex-col">
+    <div className="max-w-sm border border-gray-200 rounded-lg shadow-xl bg-gray-800 border-gray-700 transition duration-300 transform hover:scale-[1.03] flex flex-col">
         <a href={linkUrl} target="_blank" rel="noopener noreferrer">
             {/* Image section: we use object-cover to fit image in place of rounded-t-lg */}
             <img 
@@ -43,11 +43,11 @@ const Card = ({ title, description, imageUrl, linkUrl, buttonText, buttonColor }
         </a>
         <div className="p-5 flex flex-col justify-between flex-grow">
             <a href={linkUrl} target="_blank" rel="noopener noreferrer">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-white">
                     {title}
                 </h5>
             </a>
-            <p className="mb-4 font-normal text-gray-700 dark:text-gray-400 flex-grow">
+            <p className="mb-4 font-normal text-gray-400 flex-grow">
                 {description}
             </p>
             <a 
@@ -164,15 +164,15 @@ const ContactFormSection = () => (
 
 function Contact() {
     return (
-        <div className="bg-gray-50 dark:bg-gray-900/80 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+        <div className=" dark:bg-gray-900/80 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
                 
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white sm:text-5xl">
+                    <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
                         Our Communication Hub
                     </h1>
-                    <p className="mt-4 text-xl text-gray-500 dark:text-gray-400">
+                    <p className="mt-4 text-xl text-gray-500">
                         Connect with us through social channels or reach our directory directly.
                     </p>
                 </div>

@@ -12,7 +12,7 @@ function Events() {
       time: "9:00 AM(22-Nov) - 9:00 AM(23-Nov)",
       location: "Ghulam Ahmed Hall, MJCET",
       type: "Datathon",
-      description: "The Flagship event of AWS cloud club and IEEE SMC, 24-hour datathon event where students from various colleges come together to solve real-world problems using data science and machine learning. An event open to all enthusiastic minds across india.",
+      description: "The Flagship event of AWS cloud club MJCET and IEEE SMC MJCET, 24-hour datathon event where students from various colleges come together to solve real-world problems using data science and machine learning. An event open to all enthusiastic minds across india.",
       registrationLink: "https://datanyx.in/",
       image: "/images/datanyx.png",
       tags: ["Datathon", "AI ML", "Team building", "AWS", "Networking"]

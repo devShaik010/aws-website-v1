@@ -76,7 +76,7 @@ function Gallery() {
         <div className=" py-6 sm:py-8 lg:py-12">
             <div className="mx-auto max-w-screen-xl px-4 md:px-8">
                 <div className="mb-8 md:mb-12">
-                    <h2 className="text-3xl font-extrabold text-gray-800 sm:text-4xl dark:text-white">
+                    <h2 className="text-3xl font-extrabold text-gray-800 sm:text-4xl text-white">
                         Our Memories
                     </h2>
                     <p className="text-gray-500 mt-2">A collection of moments.</p>

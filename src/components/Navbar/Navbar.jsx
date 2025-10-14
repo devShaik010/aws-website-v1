@@ -41,7 +41,7 @@ const Navbar = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
         className={cn(
-          "hidden md:flex max-w-fit fixed top-3 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full dark:bg-black bg-white/70 backdrop-blur-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-8 py-2 items-center justify-center space-x-4"
+          "hidden md:flex max-w-fit fixed top-3 inset-x-0 mx-auto border border-transparent border-gray-200/[0.2] rounded-full bg-black bg-black/70 backdrop-blur-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-8 py-2 items-center justify-center space-x-4"
         )}
       >
         {navItems.map((navItem, idx) => (
@@ -49,7 +49,7 @@ const Navbar = () => {
             key={`link-desktop-${idx}`}
             to={navItem.link}
             className={cn(
-              "relative items-center flex space-x-1 text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300 group",
+              "relative items-center flex space-x-1 text-neutral-600 hover:text-neutral-500 text-neutral-50 dark:hover:text-neutral-300 group",
               location.pathname === navItem.link && "text-blue-600 dark:text-blue-400"
             )}
           >
@@ -61,7 +61,7 @@ const Navbar = () => {
           href={membershipFormLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full hover:bg-white/10 transition-colors"
+          className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-gray-400 px-4 py-2 rounded-full hover:bg-white/40 hover:text-black transition-colors"
         >
           <span>Membership</span>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
