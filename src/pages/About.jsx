@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-900/80 text-white">
       {/* Hero Section */}
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 ">
@@ -24,7 +24,7 @@ function About() {
             </h1>
             
             <p className="text-gray-300 text-lg leading-relaxed">
-              Welcome to the AWS User Group at MJCET! We are a community of cloud enthusiasts, 
+              Welcome to the AWS Cloud club at MJCET! We are a community of cloud enthusiasts, 
               developers, and future architects passionate about Amazon Web Services technology.
             </p>
 

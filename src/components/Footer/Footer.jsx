@@ -3,10 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const socialLinks = [
-  { name: 'Twitter', url: 'https://twitter.com/awscommunity', icon: '𝕏' },
-  { name: 'LinkedIn', url: 'https://linkedin.com/company/aws', icon: 'in' },
-  { name: 'GitHub', url: 'https://github.com/aws', icon: '⎇' },
-  { name: 'YouTube', url: 'https://youtube.com/aws', icon: '▶' },
+  { name: 'Meetup', url: 'https://www.meetup.com/aws-cloud-club-mjcet/', icon: 'M' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/company/aws-cloud-club-mjcet/', icon: 'in' },
+  { name: 'Instagram', url: 'https://www.instagram.com/awsclub.mjcet/', icon: 'I' },
 ];
 
 const Footer = () => {
@@ -21,12 +20,15 @@ const Footer = () => {
 
   // Team members data
   const governingBody = [
-    { id: 1, name: 'John Smith', designation: 'President', image: 'https://randomuser.me/api/portraits/men/1.jpg', profile: '/team/john-smith' },
-    { id: 2, name: 'Sarah Johnson', designation: 'Vice President', image: 'https://randomuser.me/api/portraits/women/1.jpg', profile: '/team/sarah-johnson' },
-    { id: 3, name: 'Michael Wong', designation: 'Secretary', image: 'https://randomuser.me/api/portraits/men/2.jpg', profile: '/team/michael-wong' },
-    { id: 4, name: 'Emily Chen', designation: 'Treasurer', image: 'https://randomuser.me/api/portraits/women/2.jpg', profile: '/team/emily-chen' },
-    { id: 5, name: 'David Kumar', designation: 'Event Director', image: 'https://randomuser.me/api/portraits/men/3.jpg', profile: '/team/david-kumar' },
-    { id: 6, name: 'Lisa Patel', designation: 'Community Lead', image: 'https://randomuser.me/api/portraits/women/3.jpg', profile: '/team/lisa-patel' },
+    { id: 1, name: 'Vahaj ur Rahman', designation: 'Captain', image: '/images/profiles/vahaj.png'},
+    { id: 2, name: 'Zaid Ali Khan', designation: 'Vice Captain', image: '/images/profiles/zaid.jpg'},
+    { id: 3, name: 'Nahid Sami', designation: 'Secretary', image: '/images/profiles/nahid.jpg' },
+    { id: 4, name: 'Affah ullah shaik', designation: 'Treasurer', image: '/images/profiles/afham.jpg' },
+    { id: 5, name: 'Sidra Aleem', designation: 'Chief Representative', image: '/images/profiles/sidra.jpg' },
+    { id: 6, name: 'Saad Riyan', designation: 'Chief Coordinator', image: '/images/profiles/saad.png' },
+    { id: 7, name: 'Musab Umayr', designation: 'Outreach Director', image: '/images/profiles/musab.jpg' },
+    { id: 8, name: 'Shaik Abrar', designation: 'Technical Coordinator', image: '/images/profiles/abrar.jpg' },
+
   ];
 
   return (
@@ -91,7 +93,7 @@ const Footer = () => {
                   <ul className="space-y-2">
                     {section.items.map((item) => (
                       <li key={item}>
-                        <Link to="#" className="text-gray-400 hover:text-white transition-colors">
+                        <Link to="https://www.meetup.com/aws-cloud-club-mjcet/" className="text-gray-400 hover:text-white transition-colors">
                           {item}
                         </Link>
                       </li>
@@ -151,21 +153,10 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-center justify-between items-center">
           <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} AWS Community. All rights reserved.
+            &copy; {new Date().getFullYear()} AWS Cloud Club MJCET. All rights reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
-              Terms of Service
-            </Link>
-            <Link to="/contact" className="text-gray-400 hover:text-white text-sm transition-colors">
-              Contact
-            </Link>
-          </div>
         </div>
         
      

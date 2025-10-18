@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { href } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -158,16 +160,16 @@ function Home() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-            <button className="group relative px-6 py-3 bg-white text-black font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/90 text-sm" style={{ fontFamily: 'Inter, sans-serif' }}>
+            <a className="group relative px-6 py-3 bg-white text-black font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/90 text-sm" style={{ fontFamily: 'Inter, sans-serif' }} href="https://docs.google.com/forms/d/e/1FAIpQLSeFZHIXnUFz46NuwibriOUkL7rEjk-PQetA8X0z2o9TCQK4pA/viewform" target="_blank" rel="noopener noreferrer">
               <span className="relative z-10 flex items-center">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
                 </svg>
                 Join Now
               </span>
-            </button>
+            </a>
             
-            <button className="group relative px-6 py-3 bg-transparent border border-white/20 hover:border-white/30 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/5 text-sm" style={{ fontFamily: 'Inter, sans-serif' }}>
+            <a className="group relative px-6 py-3 bg-transparent border border-white/20 hover:border-white/30 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/5 text-sm" style={{ fontFamily: 'Inter, sans-serif' }} href="https://www.meetup.com/aws-cloud-club-mjcet/" target='_blank' > 
               <span className="relative z-10 flex items-center">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -175,13 +177,13 @@ function Home() {
                 Explore Events
                 <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
               </span>
-            </button>
+            </a>
           </div>
         </div>
       </div>
 
       {/* About Us Section */}
-      <div className="relative py-20 bg-black">
+      <div className="relative py-20 bg-gray-900/80">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
@@ -225,7 +227,7 @@ function Home() {
             </div>
 
             {/* Right Side - Content */}
-            <div className="relative">
+            <div className="relative ">
               <div className="mb-6">
                 <span className="text-white/60 text-sm font-medium tracking-wider uppercase mb-4 block" style={{ fontFamily: 'Inter, sans-serif' }}>
                   About Us
@@ -249,16 +251,20 @@ function Home() {
                <br />
               </div>
 
-              <button className="border border-white/20 hover:border-white/40 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white/5" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Learn More About Us
-              </button>
+              <Link 
+                  to="/about" // 2. Use 'to' instead of 'href' for internal routing
+                  className="border border-white/20 hover:border-white/40 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white/5" 
+                  style={{ fontFamily: 'Inter, sans-serif' }} 
+                >
+                  Learn More About Us
+                </Link>
             </div>
           </div>
         </div>
       </div>
 
       {/* Our Speciality Section */}
-      <div className="relative py-20 bg-black">
+      <div className="relative py-20 bg-gray-900/80">
         <div className="max-w-7xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -287,7 +293,7 @@ function Home() {
                       alt="AWS Training"
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/30"></div>
+                    <div className="absolute inset-0 "></div>
                   </div>
                 </div>
                 
@@ -317,7 +323,7 @@ function Home() {
                       alt="Certification Prep"
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/30"></div>
+                    <div className="absolute inset-0 "></div>
                   </div>
                 </div>
                 
@@ -347,7 +353,7 @@ function Home() {
                       alt="Project Guidance"
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/30"></div>
+                    <div className="absolute inset-0 "></div>
                   </div>
                 </div>
                 
@@ -377,7 +383,7 @@ function Home() {
                       alt="Career Support"
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/30"></div>
+                    <div className="absolute inset-0 "></div>
                   </div>
                 </div>
                 
@@ -400,7 +406,7 @@ function Home() {
       </div>
 
       {/* Testimonials Section */}
-      <div className="relative py-20 bg-gray-950">
+      <div className="relative py-20 bg-gray-900/80">
         <div className="max-w-6xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-16">

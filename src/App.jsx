@@ -11,6 +11,7 @@ import Achievements from '@pages/Achivements'
 import Contact from '@pages/Contact'
 import Playground from '@pages/Playground'
 import ScrollyLoader from './components/WebsiteLoader/ScrollyLoader'
+import Gallery from '@pages/Gallery'
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -67,9 +68,10 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/events" element={<Events />} />
-                <Route path="/achievements" element={<Achievements />} />
-                <Route path="/playground" element={<Playground />} />
+                {/* <Route path="/achievements" element={<Achievements />} />
+                <Route path="/playground" element={<Playground />} /> */}
                 <Route path="/contact" element={<Contact />} />
+                <Route path='/gallery' element={<Gallery/>}/>
               </Routes>
             </main>
             <Footer />
