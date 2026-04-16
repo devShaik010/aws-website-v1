@@ -12,6 +12,9 @@ import Contact from '@pages/Contact'
 import Playground from '@pages/Playground'
 import ScrollyLoader from './components/WebsiteLoader/ScrollyLoader'
 import Gallery from '@pages/Gallery'
+import StudentCommunityDays from '@pages/StudentCommunityDays'
+import RegisterAttendee from '@pages/RegisterAttendee'
+import RegisterSpeaker from '@pages/RegisterSpeaker'
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -72,6 +75,9 @@ function App() {
                 <Route path="/playground" element={<Playground />} /> */}
                 <Route path="/contact" element={<Contact />} />
                 <Route path='/gallery' element={<Gallery/>}/>
+                <Route path="/student-community-days" element={<StudentCommunityDays />} />
+                <Route path="/student-community-days/register/attendee" element={<RegisterAttendee />} />
+                <Route path="/student-community-days/register/speaker" element={<RegisterSpeaker />} />
               </Routes>
             </main>
             <Footer />

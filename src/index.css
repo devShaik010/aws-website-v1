@@ -3,3 +3,41 @@
 body{
     background-color: black;
 }
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.neon-border-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px; /* full rounded */
+}
+
+.neon-border-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 30%,
+    #f97316 40%, /* orange-500 */
+    #eab308 50%, /* yellow-500 */
+    transparent 60%,
+    transparent 100%
+  );
+}
+
+.neon-border-inner {
+  position: relative;
+  z-index: 10;
+  border-radius: 9999px;
+}
