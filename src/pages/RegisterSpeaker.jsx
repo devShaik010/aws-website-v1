@@ -16,7 +16,7 @@ const RegisterSpeaker = () => {
             </svg>
           </div>
           <h1 className="text-3xl font-bold mb-3">Call for Speakers</h1>
-          <p className="text-gray-400">Submit your session proposal for Student Community Days.</p>
+          <p className="text-gray-400">Submit your session proposal for Student Community Day.</p>
         </div>
 
         <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
@@ -59,7 +59,7 @@ const RegisterSpeaker = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <p className="text-sm text-blue-200/90 leading-relaxed">
-                   Please provide 3 topics you are most skilled at and would be interested in speaking about during the Student Community Days. This helps us curate the best sessions.
+                   Please provide 3 topics you are most skilled at and would be interested in speaking about during the Student Community Day. This helps us curate the best sessions.
                 </p>
              </div>
           </div>

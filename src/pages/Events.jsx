@@ -19,7 +19,7 @@ function Events() {
   const upcomingEvents = [
     {
       id: 1,
-      title: "AWS Student Community Days 2026",
+      title: "AWS Student Community Day 2026",
       date: "May 2026",
       time: "Full day · Opening to closing keynote",
       location: "Muffakham Jah College of Engineering, Hyderabad",

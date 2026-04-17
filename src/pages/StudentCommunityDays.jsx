@@ -76,7 +76,7 @@ const StudentCommunityDays = () => {
   // On-campus venues hosting the day
   const venues = [
     {
-      name: 'Gulam Ahmed Hall',
+      name: 'Ghulam Ahmed Hall',
       tag: 'Main Stage',
       desc: 'Headline keynotes and plenary sessions. The day opens and closes on this stage.',
       icon: (
@@ -87,7 +87,7 @@ const StudentCommunityDays = () => {
     },
     {
       name: 'Seminar Hall',
-      tag: 'Breakout Space',
+      tag: 'Parallel Sessions',
       desc: 'Panel discussions, lightning talks, and moderated conversations with industry guests.',
       icon: (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
@@ -208,7 +208,7 @@ const StudentCommunityDays = () => {
             
             <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1]">
               Student Community <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-500">Days 2026</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-500">Day 2026</span>
             </motion.h1>
             
             <motion.p variants={fadeInUp} className="max-w-2xl text-lg md:text-xl text-gray-400 font-light leading-relaxed">
@@ -281,7 +281,7 @@ const StudentCommunityDays = () => {
               </div>
 
               <p className="text-xl md:text-2xl text-gray-200 font-light leading-relaxed mb-8">
-                AWS Student Community Days (SCD) are <span className="text-white font-semibold">one-day, community-led conferences</span> where event logistics and content are <span className="text-orange-400 font-semibold">planned, sourced, and delivered by student community leaders.</span>
+                AWS Student Community Day (SCD) are <span className="text-white font-semibold">one-day, community-led conferences</span> where event logistics and content are <span className="text-orange-400 font-semibold">planned, sourced, and delivered by student community leaders.</span>
               </p>
 
               <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed border-l-2 border-orange-500/40 pl-6">
@@ -739,7 +739,7 @@ const StudentCommunityDays = () => {
 
               <div className="text-center mb-10">
                 <h3 className="text-3xl font-bold mb-3">Join the Event</h3>
-                <p className="text-gray-400">How would you like to participate in the Student Community Days?</p>
+                <p className="text-gray-400">How would you like to participate in the Student Community Day?</p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
