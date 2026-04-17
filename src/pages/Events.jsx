@@ -1,25 +1,49 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 function Events() {
   const [activeTab, setActiveTab] = useState('upcoming');
+  const navigate = useNavigate();
+
+  // Opens external URLs in a new tab, but routes internal paths via SPA navigation.
+  const handleRegisterClick = (link) => {
+    if (!link) return;
+    if (link.startsWith('/')) {
+      navigate(link);
+    } else {
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
+  };
 
   const upcomingEvents = [
     {
       id: 1,
+      title: "AWS Student Community Days 2026",
+      date: "May 2026",
+      time: "Full day · Opening to closing keynote",
+      location: "Muffakham Jah College of Engineering, Hyderabad",
+      type: "Flagship Conference",
+      description: "The flagship annual event of AWS Cloud Club MJCET — a one-day, student-led conference bringing together cloud enthusiasts, developers, and industry experts. Expect 3+ tracks across keynotes, hands-on workshops, lightning talks, and panel discussions spanning the Main Stage, Breakout Space, and AI Lab. Limited early-bird tickets available now.",
+      registrationLink: "/student-community-days",
+      image: "/scd/About_the_Event_pic.jpeg",
+      tags: ["Keynotes", "Workshops", "Hands-on Labs", "AWS", "Student-led", "Early Bird"]
+    }
+  ];
+
+  const pastEvents = [
+    {
+      id: 0,
       title: "Datanyx 2025",
       date: "Nov 22 - 23, 2025",
       time: "9:00 AM(22-Nov) - 9:00 AM(23-Nov)",
       location: "Ghulam Ahmed Hall, MJCET",
       type: "Datathon",
-      description: "The Flagship event of AWS cloud club MJCET and IEEE SMC MJCET, 24-hour datathon event where students from various colleges come together to solve real-world problems using data science and machine learning. An event open to all enthusiastic minds across india.",
-      registrationLink: "https://datanyx.in/",
+      description: "The Flagship event of AWS cloud club MJCET and IEEE SMC MJCET, 24-hour datathon event where students from various colleges came together to solve real-world problems using data science and machine learning. An event open to all enthusiastic minds across india.",
+      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/311883358/?eventOrigin=group_past_events",
       image: "/images/datanyx.png",
       tags: ["Datathon", "AI ML", "Team building", "AWS", "Networking"]
-    }
-  ];
-
-  const pastEvents = [
+    },
     {
       id: 1,
       title: "Amazon Q",
@@ -247,7 +271,7 @@ function Events() {
                 </div>
 
                 <div className="flex gap-4 pt-4">
-                    <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300" onClick={() => window.open(currentEvents[0].registrationLink, "_blank")}>
+                    <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300" onClick={() => handleRegisterClick(currentEvents[0].registrationLink)}>
                         Register Now
                     </button>
                 </div>

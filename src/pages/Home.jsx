@@ -169,7 +169,7 @@ function Home() {
               </span>
             </a>
             
-            <a className="group relative px-6 py-3 bg-transparent border border-white/20 hover:border-white/30 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/5 text-sm" style={{ fontFamily: 'Inter, sans-serif' }} href="https://www.meetup.com/aws-cloud-club-mjcet/" target='_blank' > 
+            <a className="group relative px-6 py-3 bg-transparent border border-white/20 hover:border-white/30 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/5 text-sm" style={{ fontFamily: 'Inter, sans-serif' }} href="https://www.meetup.com/aws-cloud-club-mjcet/" target='_blank' >
               <span className="relative z-10 flex items-center">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -177,6 +177,23 @@ function Home() {
                 Explore Events
                 <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
               </span>
+            </a>
+          </div>
+
+          {/* Instagram follow link — compact, below the two CTAs */}
+          <div className="mt-5 flex justify-center">
+            <a
+              href="https://www.instagram.com/awsclub.mjcet/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors duration-300"
+              style={{ fontFamily: 'Inter, sans-serif' }}
+            >
+              <svg className="w-4 h-4 text-white/70 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.849.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.849.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+              <span>Follow us on Instagram</span>
+              <span className="h-px bg-white/30 group-hover:bg-white w-0 group-hover:w-4 transition-all duration-300" />
             </a>
           </div>
         </div>
@@ -189,37 +206,45 @@ function Home() {
             
             {/* Left Side - Image Showcase */}
             <div className="relative">
-              {/* Main large image */}
+              {/* Main image — natural aspect at every breakpoint (no cropping). */}
               <div className="relative group">
                 <div className="relative overflow-hidden rounded-2xl">
-                  <img 
-                    src="/images/team-1.jpg" 
+                  <img
+                    src="/images/team-1.jpg"
                     alt="MJCET AWS Cloud Club Team"
-                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/20"></div>
                 </div>
               </div>
 
+              {/*
+                Overlapping collage at every breakpoint, aspect ratios and resolution preserved
+                (no object-cover, no fixed heights). Only widths and offsets vary:
+                • Mobile — smaller widths, offsets pushed further up / further down so the side
+                  images mostly sit above / below the main image.
+                • Desktop (lg+) — original widths, offsets out at -top-24 / -bottom-24 so faces
+                  in the main image stay clear.
+              */}
               {/* Small image - top right */}
-              <div className="absolute -top-8 -right-4 w-40 h-32 group">
+              <div className="absolute -top-12 -right-2 w-28 sm:w-36 lg:-top-16 lg:-right-4 lg:w-40 group">
                 <div className="relative overflow-hidden rounded-xl">
-                  <img 
-                    src="/images/team-2.jpg" 
+                  <img
+                    src="/images/team-2.jpg"
                     alt="Cloud Computing Workshop"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/20"></div>
                 </div>
               </div>
 
               {/* Medium image - bottom left */}
-              <div className="absolute -bottom-6 -left-6 w-40 h-32 group">
+              <div className="absolute -bottom-12 -left-2 w-28 sm:w-36 lg:-bottom-24 lg:-left-6 lg:w-40 group">
                 <div className="relative overflow-hidden rounded-xl">
-                  <img 
-                    src="/images/team-3.jpg" 
+                  <img
+                    src="/images/team-3.jpg"
                     alt="Team Collaboration"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/20"></div>
                 </div>

@@ -1,5 +1,25 @@
 @import "tailwindcss";
 
+/* Promo bar marquee */
+@keyframes promoMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.promo-marquee {
+  animation: promoMarquee 40s linear infinite;
+}
+
+.promo-bar:hover .promo-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-marquee {
+    animation: none;
+  }
+}
+
 /* Video Background Styles for Instagram Reel */
 .hero-video {
   width: 100%;

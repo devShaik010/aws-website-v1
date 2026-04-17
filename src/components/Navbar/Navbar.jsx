@@ -24,7 +24,7 @@ const socialLinks = [
   { name: "Github", link: "#" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ hasPromoBar = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -42,7 +42,8 @@ const Navbar = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
         className={cn(
-          "hidden md:flex max-w-fit fixed top-3 inset-x-0 mx-auto border border-transparent border-gray-200/[0.2] rounded-full bg-black bg-black/70 backdrop-blur-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] p-2 items-center justify-center space-x-4"
+          "hidden md:flex max-w-fit fixed inset-x-0 mx-auto border border-transparent border-gray-200/[0.2] rounded-full bg-black bg-black/70 backdrop-blur-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] p-2 items-center justify-center space-x-4 transition-[top] duration-300",
+          hasPromoBar ? "top-12" : "top-3"
         )}
       >
         {navItems.map((navItem, idx) => {
@@ -89,7 +90,10 @@ const Navbar = () => {
       </motion.div>
 
       {/* Mobile Navigation Button */}
-      <div className="md:hidden fixed top-0 right-0 z-[5000] p-4">
+      <div className={cn(
+        "md:hidden fixed right-0 z-[5000] p-4 transition-[top] duration-300",
+        hasPromoBar ? "top-9" : "top-0"
+      )}>
         <button 
           onClick={toggleMenu}
           className="p-2 rounded-full bg-black text-white hover:bg-gray-800 focus:outline-none"

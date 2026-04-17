@@ -33,6 +33,159 @@ const StudentCommunityDays = () => {
     { name: 'Sponsor 4', isAnnounced: false },
   ];
 
+  // Speaker session formats
+  const sessionTypes = [
+    {
+      title: 'KEYNOTE',
+      desc: 'Set the tone for the day with a vision-shaping talk on cloud, AI, or what\'s next.',
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'WORKSHOP',
+      desc: 'Roll up your sleeves — guide the community through a hands-on build session.',
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+      ),
+    },
+    {
+      title: 'LIGHTNING TALK',
+      desc: 'Five minutes, one sharp idea. Fast, focused, and unforgettable.',
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'PANEL DISCUSSION',
+      desc: 'Join an expert lineup for a moderated debate on a topic you care about.',
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+    },
+  ];
+
+  // On-campus venues hosting the day
+  const venues = [
+    {
+      name: 'Gulam Ahmed Hall',
+      tag: 'Main Stage',
+      desc: 'Headline keynotes and plenary sessions. The day opens and closes on this stage.',
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+        </svg>
+      ),
+    },
+    {
+      name: 'Seminar Hall',
+      tag: 'Breakout Space',
+      desc: 'Panel discussions, lightning talks, and moderated conversations with industry guests.',
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'AI Lab',
+      tag: 'Hands-on Workshops',
+      desc: 'Roll-up-your-sleeves build sessions. Bring a laptop, leave having shipped something.',
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+          <rect x="4" y="4" width="16" height="16" rx="2" strokeLinejoin="round" />
+          <rect x="9" y="9" width="6" height="6" strokeLinejoin="round" />
+          <path strokeLinecap="round" d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3" />
+        </svg>
+      ),
+    },
+  ];
+
+  // What's included beyond sessions
+  const perks = [
+    {
+      title: 'Tea & Coffee',
+      desc: 'All-day refills',
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 8h12v7a4 4 0 01-4 4H7a4 4 0 01-4-4V8zm12 1h2a3 3 0 010 6h-2M7 3v2m4-2v2" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Snacks',
+      desc: 'Between sessions',
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 10h16l-1.5 9a2 2 0 01-2 1.7h-9a2 2 0 01-2-1.7L4 10zm2-4a6 6 0 0112 0H6z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Lunch',
+      desc: 'Full buffet included',
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 3v8a3 3 0 003 3v7M6 3v7M9 3v7m12-7v18m-3-9h3a0 0 0 000 0V5a2 2 0 00-2-2h-1v9z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Swag Kit',
+      desc: 'Tee, stickers & more',
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 1010 8h2zM20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7m16-4H4a1 1 0 00-1 1v2a1 1 0 001 1h16a1 1 0 001-1V9a1 1 0 00-1-1z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Certificate',
+      desc: 'AWS-branded',
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Networking',
+      desc: 'Builders & recruiters',
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Photo-ops',
+      desc: 'Capture the day',
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      ),
+    },
+    {
+      title: 'Free Wi-Fi',
+      desc: 'For all attendees',
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+        </svg>
+      ),
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white pt-24 font-sans selection:bg-orange-500/30">
       
@@ -92,7 +245,10 @@ const StudentCommunityDays = () => {
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center group">
              {/* Beautiful group/event background image */}
-             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700" />
+             <div
+               className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
+               style={{ backgroundImage: "url('/scd/About_the_Event_pic.jpeg')" }}
+             />
              {/* Gradient overlay for text contrast and premium feel */}
              <div className="absolute inset-0 bg-gradient-to-tr from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-700" />
              {/* Subtle orange tint to match the brand */}
@@ -101,12 +257,204 @@ const StudentCommunityDays = () => {
         </div>
       </section>
 
+      {/* What are SCDs — Info Callout */}
+      <section className="px-6 md:px-12 lg:px-24 py-20 bg-[#0a0a0a]">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            className="relative rounded-[2rem] overflow-hidden border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl p-10 md:p-16"
+          >
+            {/* Ambient glows */}
+            <div className="absolute -top-24 -right-24 w-80 h-80 bg-orange-500/10 rounded-full blur-[110px] pointer-events-none" />
+            <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-amber-500/10 rounded-full blur-[110px] pointer-events-none" />
+
+            {/* Decorative quote mark */}
+            <svg className="absolute top-6 right-8 w-24 h-24 text-orange-500/10 pointer-events-none" fill="currentColor" viewBox="0 0 32 32">
+              <path d="M10,8H6A2,2 0 0,0 4,10V18A2,2 0 0,0 6,20H10L14,24V10A2,2 0 0,0 12,8H10M20,8H18A2,2 0 0,0 16,10V18A2,2 0 0,0 18,20H22L26,24V10A2,2 0 0,0 24,8H20Z" />
+            </svg>
+
+            <div className="relative">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-500/30 bg-orange-500/10 mb-6">
+                <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
+                <span className="text-orange-400 text-xs font-semibold tracking-wider uppercase">What are SCDs?</span>
+              </div>
+
+              <p className="text-xl md:text-2xl text-gray-200 font-light leading-relaxed mb-8">
+                AWS Student Community Days (SCD) are <span className="text-white font-semibold">one-day, community-led conferences</span> where event logistics and content are <span className="text-orange-400 font-semibold">planned, sourced, and delivered by student community leaders.</span>
+              </p>
+
+              <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed border-l-2 border-orange-500/40 pl-6">
+                While a standard Cloud Club event focuses on one topic, a Student Community Day features <span className="text-orange-400 font-bold">3+ topics, sessions, and speakers</span> to gather, educate, and celebrate with a wider array of audiences.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Call for Speakers Section */}
+      <section className="px-6 md:px-12 lg:px-24 py-24 bg-black border-t border-white/5 relative overflow-hidden">
+        {/* Page-matching orange/gold ambient glows */}
+        <div className="absolute top-1/4 -right-20 w-[500px] h-[500px] bg-orange-500/[0.07] rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-0 -left-20 w-[400px] h-[400px] bg-yellow-500/[0.05] rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto relative">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="text-center mb-16"
+          >
+            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-400/30 bg-orange-500/10 backdrop-blur-md mb-6">
+              <svg className="w-4 h-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+              </svg>
+              <span className="text-orange-400 text-xs font-semibold tracking-wider uppercase">Call for Speakers</span>
+            </motion.div>
+
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+              Got a story to tell? <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-500">Take the stage.</span>
+            </motion.h2>
+
+            <motion.p variants={fadeInUp} className="text-gray-400 max-w-2xl mx-auto text-lg">
+              We're looking for speakers, builders, and storytellers. Pick a format that fits you and share what you love with the community.
+            </motion.p>
+          </motion.div>
+
+          {/* Session Type Cards */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-14">
+            {sessionTypes.map((session, idx) => (
+              <motion.div
+                key={session.title}
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+                transition={{ delay: idx * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative rounded-3xl overflow-hidden backdrop-blur-2xl bg-gradient-to-b from-white/[0.06] to-white/[0.01] border border-white/10 px-6 py-8 text-center transition-all duration-500 hover:border-orange-400/40 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_-15px_rgba(249,115,22,0.4),inset_0_0_40px_rgba(249,115,22,0.06)]"
+              >
+                {/* Golden gradient wash on hover */}
+                <div className="absolute inset-0 bg-gradient-to-b from-orange-400/0 via-transparent to-orange-500/0 group-hover:from-orange-400/[0.06] group-hover:to-orange-500/[0.08] transition-all duration-700 pointer-events-none" />
+
+                {/* Grid texture */}
+                <div
+                  className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                  style={{
+                    backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+                    backgroundSize: '24px 24px',
+                  }}
+                />
+
+                {/* Icon — centered */}
+                <div className="relative inline-flex mb-5">
+                  <div className="relative w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md transition-all duration-500 group-hover:border-orange-400/50 group-hover:scale-110">
+                    <div className="relative text-white/70 group-hover:text-orange-300 transition-colors duration-500 z-10">
+                      {session.icon}
+                    </div>
+                    {/* Inner golden gradient */}
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-orange-400/25 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                  {/* Halo */}
+                  <div className="absolute -inset-2 rounded-2xl bg-orange-400/25 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                </div>
+
+                {/* Title */}
+                <h3 className="relative text-sm font-bold tracking-[0.2em] text-white mb-3">
+                  {session.title}
+                </h3>
+
+                {/* Symmetric golden divider */}
+                <div className="relative mx-auto h-px w-10 bg-gradient-to-r from-transparent via-orange-400/50 to-transparent group-hover:via-orange-400 group-hover:w-16 transition-all duration-500 mb-4" />
+
+                {/* Description */}
+                <p className="relative text-[13px] text-gray-400 leading-relaxed">
+                  {session.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+            className="text-center"
+          >
+            <button
+              onClick={() => navigate('/student-community-days/register/speaker')}
+              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full overflow-hidden font-semibold transition-all duration-500 hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(249,115,22,0.4)] hover:shadow-[0_0_60px_rgba(249,115,22,0.65)]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-300 via-orange-400 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <span className="relative text-black">Submit a Speaker Proposal</span>
+              <svg className="relative w-5 h-5 text-black transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+            <p className="text-gray-500 text-sm mt-4">All experience levels welcome · Applications reviewed on a rolling basis</p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Beyond the Sessions Section */}
+      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#0a0a0a] border-t border-white/5">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="text-center mb-16"
+          >
+            <motion.span variants={fadeInUp} className="text-orange-400 text-xs font-semibold tracking-wider uppercase mb-4 block">
+              The Full Experience
+            </motion.span>
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold mb-4">Beyond the Sessions</motion.h2>
+            <motion.p variants={fadeInUp} className="text-gray-400 max-w-2xl mx-auto text-lg">
+              Your ticket unlocks more than talks. Here's everything we're packing into the day.
+            </motion.p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {perks.map((perk, idx) => (
+              <motion.div
+                key={perk.title}
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+                transition={{ delay: idx * 0.05, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative rounded-2xl backdrop-blur-xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/10 p-6 text-center overflow-hidden transition-all duration-500 hover:border-orange-400/30 hover:-translate-y-1"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-400/0 to-orange-500/0 group-hover:from-orange-400/[0.07] group-hover:to-orange-500/0 transition-all duration-500 pointer-events-none" />
+
+                <div className="relative w-12 h-12 mx-auto mb-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-orange-400/80 group-hover:text-orange-400 group-hover:border-orange-400/30 group-hover:bg-orange-400/10 transition-all duration-500">
+                  {perk.icon}
+                </div>
+                <h4 className="relative text-sm font-semibold text-white mb-1">{perk.title}</h4>
+                <p className="relative text-xs text-gray-500">{perk.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="text-center text-gray-500 text-sm mt-10 max-w-xl mx-auto">
+            … and a few surprises we're saving for the day itself.
+          </p>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#0a0a0a]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
+            {/* Early Bird Banner */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-md"
+            >
+              <svg className="w-4 h-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-orange-400 text-xs font-bold uppercase tracking-[0.15em]">Early Bird · Limited Time</span>
+            </motion.div>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Tickets & Pricing</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">Secure your spot. Choose the pass that fits you best.</p>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Booking early? You save. These are our <span className="text-orange-400 font-medium">early bird prices</span> — a thank-you for backing us before the gates open.
+            </p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -114,11 +462,16 @@ const StudentCommunityDays = () => {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="group relative p-[1px] rounded-[2rem] bg-gradient-to-b from-white/20 to-white/5 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative h-full bg-[#0f0f0f] rounded-[calc(2rem-1px)] p-10 flex flex-col">
+                <EarlyBirdTicket />
                 <span className="text-orange-400 text-sm font-semibold tracking-wider uppercase mb-2">Solo</span>
                 <h3 className="text-3xl font-bold mb-4">Individual Pass</h3>
-                <div className="flex items-baseline gap-1 mb-8">
+                <div className="flex items-baseline gap-2 mb-1">
                   <span className="text-5xl font-black">₹150</span>
                   <span className="text-gray-500">/person</span>
+                </div>
+                <div className="flex items-center gap-2 mb-8">
+                  <span className="text-gray-500 line-through text-sm">₹250</span>
+                  <span className="text-orange-400/80 text-xs">Save ₹100</span>
                 </div>
                 <ul className="space-y-4 mb-10 flex-grow text-gray-400">
                   <li className="flex gap-3 items-center"><CheckIcon /> Full day access</li>
@@ -133,13 +486,17 @@ const StudentCommunityDays = () => {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="group relative p-[1px] rounded-[2rem] bg-gradient-to-b from-orange-500/50 to-orange-500/10 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative h-full bg-[#14100c] rounded-[calc(2rem-1px)] p-10 flex flex-col">
-                <div className="absolute top-0 right-10 inline-block px-3 py-1 bg-orange-500 text-black text-xs font-bold rounded-b-lg">POPULAR</div>
+                <div className="absolute top-0 left-10 inline-block px-3 py-1 bg-orange-500 text-black text-xs font-bold rounded-b-lg">POPULAR</div>
+                <EarlyBirdTicket />
                 <span className="text-orange-400 text-sm font-semibold tracking-wider uppercase mb-2">Squad</span>
                 <h3 className="text-3xl font-bold mb-4">Group Pass (4 People)</h3>
-                <div className="flex items-baseline gap-1 mb-8">
+                <div className="flex items-baseline gap-2 mb-1 flex-wrap">
                   <span className="text-5xl font-black">₹400</span>
                   <span className="text-gray-500">/total</span>
-                  <span className="text-orange-400 text-sm ml-2 bg-orange-500/10 px-2 py-0.5 rounded-md border border-orange-500/20">Save ₹200</span>
+                </div>
+                <div className="flex items-center gap-2 mb-8 flex-wrap">
+                  <span className="text-gray-500 line-through text-sm">₹800</span>
+                  <span className="text-orange-400 text-xs bg-orange-500/10 px-2 py-0.5 rounded-md border border-orange-500/20 font-semibold">Save ₹400</span>
                 </div>
                 <ul className="space-y-4 mb-10 flex-grow text-gray-400">
                   <li className="flex gap-3 items-center text-gray-300"><CheckIcon color="text-orange-400"/> Everything in Individual Pass</li>
@@ -156,14 +513,12 @@ const StudentCommunityDays = () => {
       {/* Speakers Section */}
       <section className="px-6 md:px-12 lg:px-24 py-24 bg-black border-y border-white/5">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">Masterclass Speakers</h2>
-              <p className="text-gray-400 max-w-xl">Learn from AWS Heroes, Community Builders, and industry veterans.</p>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Masterclass Speakers</h2>
+            <p className="text-gray-400 max-w-xl mx-auto">Learn from AWS Heroes, Community Builders, and industry veterans.</p>
           </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {speakers.map((id) => (
               <motion.div 
                 key={id}
@@ -232,7 +587,10 @@ const StudentCommunityDays = () => {
             <div className="relative h-[300px] lg:h-[450px] w-full rounded-2xl overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
               {/* Optional graphic placeholder for college image */}
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center group-hover:scale-105 transition-transform duration-700" />
+              <div
+                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
+                style={{ backgroundImage: "url('/scd/clg_location_pic.avif')" }}
+              />
               
               <div className="absolute bottom-6 left-6 z-20">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-3">
@@ -273,6 +631,83 @@ const StudentCommunityDays = () => {
             </div>
 
           </div>
+
+          {/* Event Spaces — venues hosting the sessions */}
+          <div className="mt-20">
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+              className="text-center mb-12"
+            >
+              <motion.span variants={fadeInUp} className="text-orange-400 text-xs font-semibold tracking-[0.2em] uppercase mb-3 block">
+                On The Day
+              </motion.span>
+              <motion.h3 variants={fadeInUp} className="text-2xl md:text-4xl font-bold mb-3">
+                Event Spaces
+              </motion.h3>
+              <motion.p variants={fadeInUp} className="text-gray-400 max-w-xl mx-auto">
+                Three rooms across campus, each tuned to the kind of session inside.
+              </motion.p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+              {venues.map((venue, idx) => (
+                <motion.div
+                  key={venue.name}
+                  initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+                  transition={{ delay: idx * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                  className={`group relative rounded-3xl overflow-hidden backdrop-blur-2xl bg-gradient-to-b from-white/[0.05] to-white/[0.01] border border-white/10 p-4 sm:p-6 md:p-7 transition-all duration-500 hover:border-orange-400/40 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_-15px_rgba(249,115,22,0.35),inset_0_0_40px_rgba(249,115,22,0.04)] ${idx === 0 ? 'col-span-2 md:col-span-1' : 'col-span-1'}`}
+                >
+                  {/* Golden hover wash */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-orange-400/0 to-orange-500/0 group-hover:from-orange-400/[0.05] group-hover:to-orange-500/[0.08] transition-all duration-700 pointer-events-none" />
+
+                  {/* Grid texture */}
+                  <div
+                    className="absolute inset-0 opacity-[0.025] pointer-events-none"
+                    style={{
+                      backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+                      backgroundSize: '24px 24px',
+                    }}
+                  />
+
+                  {/* Top row: icon + index */}
+                  <div className="relative flex items-start justify-between mb-4 sm:mb-6 md:mb-8">
+                    <div className="relative">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md transition-all duration-500 group-hover:border-orange-400/40 group-hover:scale-110">
+                        <div className="relative text-white/70 group-hover:text-orange-300 transition-colors duration-500 z-10">
+                          {venue.icon}
+                        </div>
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-orange-400/20 to-yellow-500/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      </div>
+                      <div className="absolute -inset-2 rounded-2xl bg-orange-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                    </div>
+                    <span className="font-mono text-[10px] sm:text-[11px] tracking-widest text-white/25 group-hover:text-orange-400/60 transition-colors duration-500 mt-1 sm:mt-2">
+                      0{idx + 1}
+                    </span>
+                  </div>
+
+                  {/* Venue name */}
+                  <h4 className="relative text-base sm:text-xl md:text-[1.35rem] font-bold text-white leading-tight mb-2 sm:mb-3">
+                    {venue.name}
+                  </h4>
+
+                  {/* Tag line with decorative rule */}
+                  <div className="relative flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                    <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.12em] sm:tracking-[0.15em] text-orange-400 uppercase">
+                      {venue.tag}
+                    </span>
+                    <span className="h-px flex-1 bg-gradient-to-r from-orange-400/40 via-white/5 to-transparent" />
+                  </div>
+
+                  {/* Description */}
+                  <p className="relative text-[11px] sm:text-sm text-gray-400 leading-relaxed">
+                    {venue.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -348,6 +783,50 @@ const StudentCommunityDays = () => {
     </div>
   );
 };
+
+// Decorative Early Bird ticket stub for pricing cards
+const EarlyBirdTicket = () => (
+  <div className="absolute top-4 right-4 rotate-[14deg] pointer-events-none select-none z-20">
+    <div
+      className="relative transition-transform duration-500 group-hover:rotate-[18deg] group-hover:scale-105"
+      style={{ filter: 'drop-shadow(0 8px 18px rgba(249,115,22,0.5))' }}
+    >
+      <svg width="100" height="40" viewBox="0 0 100 40" className="block">
+        <defs>
+          <linearGradient id="earlyBirdGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#fbbf24" />
+            <stop offset="50%" stopColor="#f97316" />
+            <stop offset="100%" stopColor="#ea580c" />
+          </linearGradient>
+        </defs>
+        {/* Ticket body with notched side edges */}
+        <path
+          d="M 4 0 L 96 0 A 4 4 0 0 1 100 4 L 100 16 A 4 4 0 0 0 100 24 L 100 36 A 4 4 0 0 1 96 40 L 4 40 A 4 4 0 0 1 0 36 L 0 24 A 4 4 0 0 0 0 16 L 0 4 A 4 4 0 0 1 4 0 Z"
+          fill="url(#earlyBirdGrad)"
+        />
+        {/* Top shine highlight */}
+        <path
+          d="M 4 0 L 96 0 A 4 4 0 0 1 100 4 L 100 10 L 0 10 L 0 4 A 4 4 0 0 1 4 0 Z"
+          fill="rgba(255,255,255,0.2)"
+        />
+        {/* Perforated divider between body and stub */}
+        <line x1="76" y1="6" x2="76" y2="34" stroke="rgba(0,0,0,0.35)" strokeWidth="1" strokeDasharray="2 2" />
+      </svg>
+      <div className="absolute inset-0 flex items-center">
+        <div className="pl-3 flex-1">
+          <div className="text-[9px] font-black text-black leading-[1] tracking-tight">EARLY</div>
+          <div className="text-[9px] font-black text-black leading-[1] tracking-tight mt-1">BIRD</div>
+        </div>
+        <div className="flex items-center justify-center w-[24px] h-full">
+          <svg className="w-3 h-3 text-black/60" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 // Mini check icon component for pricing
 const CheckIcon = ({ color = "text-white" }) => (
