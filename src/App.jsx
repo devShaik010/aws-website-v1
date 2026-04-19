@@ -16,6 +16,7 @@ import Gallery from '@pages/Gallery'
 import StudentCommunityDays from '@pages/StudentCommunityDays'
 import RegisterAttendee from '@pages/RegisterAttendee'
 import RegisterSpeaker from '@pages/RegisterSpeaker'
+import RegisterSponsor from '@pages/RegisterSponsor'
 
 // Reset scroll to top on every route change (works with Lenis)
 function ScrollToTop({ lenisRef }) {
@@ -53,6 +54,7 @@ function Layout({ lenisRef }) {
             <Route path="/student-community-days" element={<StudentCommunityDays />} />
             <Route path="/student-community-days/register/attendee" element={<RegisterAttendee />} />
             <Route path="/student-community-days/register/speaker" element={<RegisterSpeaker />} />
+            <Route path="/student-community-days/register/sponsor" element={<RegisterSponsor />} />
           </Routes>
         </main>
         <Footer />

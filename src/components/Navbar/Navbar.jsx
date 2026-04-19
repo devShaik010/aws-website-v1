@@ -56,7 +56,7 @@ const Navbar = ({ hasPromoBar = false }) => {
                 className="neon-border-wrapper p-[2px] ml-2 inline-flex"
               >
                 <div className="neon-border-glow animate-spin-slow"></div>
-                <div className="neon-border-inner bg-black text-orange-400 font-bold px-4 py-1 flex items-center shadow-[inset_0_0_15px_rgba(249,115,22,0.15)] hover:shadow-[inset_0_0_20px_rgba(249,115,22,0.3)] hover:text-orange-300 transition-all duration-300">
+                <div className="neon-border-inner bg-black text-violet-400 font-bold px-4 py-1 flex items-center shadow-[inset_0_0_15px_rgba(139,92,246,0.18)] hover:shadow-[inset_0_0_20px_rgba(139,92,246,0.35)] hover:text-violet-300 transition-all duration-300">
                   <span className="text-sm tracking-widest">{navItem.name}</span>
                 </div>
               </Link>
