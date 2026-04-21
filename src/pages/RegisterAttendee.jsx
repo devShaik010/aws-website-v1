@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { supabase } from '../supabaseClient';
 import { initiatePayment, tiers } from '../razorpayHandler';
+import QRCode from 'react-qr-code';
 
 const RegisterAttendee = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +18,8 @@ const RegisterAttendee = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
   const [selectedTier, setSelectedTier] = useState(null);
+  const [showQR, setShowQR] = useState(false);
+  const [transactionId, setTransactionId] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,43 +27,43 @@ const RegisterAttendee = () => {
       setError('Please select a registration type.');
       return;
     }
+    if (!showQR) {
+      setError(null);
+      setShowQR(true);
+      return;
+    }
+    if (!transactionId || transactionId.trim() === '') {
+      setError('Please enter your UPI Transaction ID after paying.');
+      return;
+    }
+
     setError(null);
     setLoading(true);
 
-    initiatePayment({
-      tier: selectedTier,
-      attendeeData: formData,
-      onSuccess: async (paymentInfo) => {
-        const { error } = await supabase
-          .from('attendees')
-          .insert([{
-            full_name: formData.fullName,
-            gender: formData.gender,
-            phone: formData.phone,
-            email: formData.email,
-            is_meetup_member: formData.isMeetupMember === 'yes',
-            tier: paymentInfo.tier,
-            amount_paid: paymentInfo.amount,
-            payment_id: paymentInfo.razorpay_payment_id,
-          }])
+    const { error: dbError } = await supabase
+      .from('attendees')
+      .insert([{
+        full_name: formData.fullName,
+        gender: formData.gender,
+        phone: formData.phone,
+        email: formData.email,
+        is_meetup_member: formData.isMeetupMember === 'yes',
+        tier: selectedTier.id,
+        amount_paid: selectedTier.price,
+        payment_id: transactionId,
+      }]);
 
-        setLoading(false);
+    setLoading(false);
 
-        if (error) {
-          if (error.code === '23505') {
-            setError('This email is already registered!');
-          } else {
-            setError('Payment succeeded but registration failed. Save this payment ID: ' + paymentInfo.razorpay_payment_id);
-          }
-        } else {
-          setSubmitted(true);
-        }
-      },
-      onFailure: (message) => {
-        setLoading(false);
-        setError(message);
-      },
-    });
+    if (dbError) {
+      if (dbError.code === '23505') {
+        setError('This email is already registered!');
+      } else {
+        setError('Registration failed. Please try again.');
+      }
+    } else {
+      setSubmitted(true);
+    }
   };
 
   if (submitted) {
@@ -244,9 +247,38 @@ const RegisterAttendee = () => {
             </div>
           )}
 
+          {showQR && selectedTier && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              className="mt-6 p-6 border border-violet-500/30 bg-violet-500/10 rounded-xl flex flex-col items-center justify-center space-y-4 overflow-hidden"
+            >
+              <p className="text-sm text-gray-300 text-center font-semibold mb-2">
+                Scan via any UPI App (GPay, PhonePe, Paytm)<br />
+                Amount: <span className="text-violet-400 font-bold text-lg">₹{selectedTier.price}</span>
+              </p>
+              <div className="bg-white p-4 rounded-2xl shadow-xl hover:scale-105 transition-transform">
+                <QRCode
+                  value={`upi://pay?pa=vahajrahman@ybl&pn=AWS%20Community%20Day&am=${selectedTier.price}&cu=INR`}
+                  size={200}
+                />
+              </div>
+              <div className="w-full space-y-2 mt-4">
+                <label className="text-sm font-medium text-gray-300">UPI Transaction ID / UTR No.</label>
+                <input
+                  type="text"
+                  value={transactionId}
+                  onChange={(e) => setTransactionId(e.target.value)}
+                  className="w-full bg-[#1a1a1a] border border-violet-500/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all text-center tracking-widest font-mono"
+                  placeholder="e.g. 321456789012"
+                />
+              </div>
+            </motion.div>
+          )}
+
           <div className="pt-6">
             <button disabled={loading} className={`w-full bg-white text-black font-semibold py-4 rounded-xl transition-colors ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-200'}`}>
-              {loading ? 'Processing...' : 'Continue to Payment'}
+              {loading ? 'Processing...' : (!showQR ? 'Continue to Payment' : 'Complete Registration')}
             </button>
             <p className="text-center text-xs text-gray-600 mt-4">By registering, you agree to our Terms of Service & Privacy Policy.</p>
           </div>
