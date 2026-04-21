@@ -170,7 +170,7 @@ function Events() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-gray-900 via-purple-900/20 to-black py-20">
+      <div className="relative bg-gradient-to-br from-gray-900 via-purple-900/20 to-black pt-40 pb-20">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-10 w-32 h-32 bg-purple-500/10 rounded-full blur-xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-36 h-36 bg-blue-500/10 rounded-full blur-xl animate-pulse delay-300"></div>

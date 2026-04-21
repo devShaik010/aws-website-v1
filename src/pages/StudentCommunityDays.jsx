@@ -219,10 +219,10 @@ const StudentCommunityDays = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white pt-24 font-sans selection:bg-violet-500/30">
-      
+    <div className="min-h-screen bg-[#0a0a0a] text-white pt-16 font-sans selection:bg-violet-500/30">
+
       {/* Hero Section */}
-      <section className="relative px-6 md:px-12 lg:px-24 py-20 overflow-hidden">
+      <section className="relative px-6 md:px-12 lg:px-24 py-8 md:py-10 overflow-hidden">
         {/* Abstract background elements */}
         <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-violet-500/10 rounded-full blur-[120px] -z-10" />
         <div className="absolute bottom-1/4 right-0 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[150px] -z-10" />
@@ -232,7 +232,7 @@ const StudentCommunityDays = () => {
             initial="hidden" 
             animate="visible" 
             variants={staggerContainer}
-            className="flex flex-col items-center text-center space-y-8"
+            className="flex flex-col items-center text-center space-y-6"
           >
             <motion.div variants={fadeInUp} className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
               <span className="text-sm font-medium tracking-wide text-gray-300 uppercase">AWS Cloud Clubs MJCET Presents</span>
@@ -247,7 +247,7 @@ const StudentCommunityDays = () => {
               A premier conference led by students, for students. Dive into the world of AWS, connect with industry leaders, and accelerate your cloud computing journey. Experience a day of transformative talks, hands-on workshops, and community building.
             </motion.p>
             
-            <motion.div variants={fadeInUp} className="pt-4">
+            <motion.div variants={fadeInUp} className="pt-2">
               <button 
                 onClick={() => setIsModalOpen(true)}
                 className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-black rounded-full font-semibold overflow-hidden transition-transform hover:scale-105 active:scale-95"

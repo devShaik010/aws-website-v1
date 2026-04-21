@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { href } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import LightRays from '../components/LightRays/LightRays';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,24 +93,21 @@ function Home() {
         {/* Inter Font Import */}
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
         
-        {/* Video Background */}
-        <div className="hero-video-container">
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="hero-video"
-            onError={(e) => {
-              console.log('Video failed to load:', e);
-              // Hide video container if video fails to load
-              e.target.parentElement.style.display = 'none';
-            }}
-          >
-            <source src="/images/reel.mp4" type="video/mp4" />
-            {/* Fallback for browsers that don't support video */}
-            Your browser does not support the video tag.
-          </video>
+        {/* Light Rays Background */}
+        <div className="absolute inset-0 z-0">
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#60a5fa"
+            raysSpeed={1.5}
+            lightSpread={0.6}
+            rayLength={2.5}
+            fadeDistance={1.8}
+            saturation={1.2}
+            followMouse={true}
+            mouseInfluence={0.1}
+            noiseAmount={0.1}
+            distortion={0.05}
+          />
         </div>
 
         {/* Subtle Background Pattern - Reduced opacity since we have video */}
@@ -120,58 +118,58 @@ function Home() {
           <div className="absolute bottom-20 right-10 w-36 h-36 bg-white/5 rounded-full blur-xl animate-pulse delay-300"></div>
         </div>
 
-        {/* Enhanced Gradient Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/70" />
+        {/* Subtle Gradient Overlay for text readability (kept light so rays show through) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900 pointer-events-none" />
 
         {/* Hero Content */}
         <div 
           ref={contentRef}
-          className="relative z-10 text-center max-w-4xl mx-auto px-6"
+          className="relative z-10 text-center max-w-5xl mx-auto px-6 mt-24 md:mt-32"
           style={{
             textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6)'
           }}
         >
           {/* New Badge */}
-          <div className="mb-4">
-            <span className="inline-flex items-center px-3 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 text-xs font-medium rounded-full" style={{ fontFamily: 'Inter, sans-serif' }}>
-              <span className="mr-2 px-1.5 py-0.5 bg-white text-black text-xs rounded-full font-semibold">New</span>
+          <div className="mb-6">
+            <span className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 text-sm font-medium rounded-full" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <span className="mr-2 px-2 py-0.5 bg-white text-black text-sm rounded-full font-semibold">New</span>
               Telangana's first cloud club
             </span>
           </div>
 
           {/* Main Title */}
-          <div className="mb-4">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
+          <div className="mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-3 leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
               <span className="text-white">Welcome to </span>
               <span className="text-white/90">MJCET's</span>
             </h1>
-            <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
+            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               <span className="text-white">AWS</span>
               <span className="text-white/90"> Cloud Club</span>
             </div>
           </div>
 
           {/* Subtitle */}
-          <div className="mb-6">
-            <p className="text-sm sm:text-base md:text-lg text-white/60 font-light leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
+          <div className="mb-8">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/60 font-light leading-relaxed max-w-3xl mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
               Be a part of the cloud revolution now
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-            <a className="group relative px-6 py-3 bg-white text-black font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/90 text-sm" style={{ fontFamily: 'Inter, sans-serif' }} href="https://docs.google.com/forms/d/e/1FAIpQLSeFZHIXnUFz46NuwibriOUkL7rEjk-PQetA8X0z2o9TCQK4pA/viewform" target="_blank" rel="noopener noreferrer">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a className="group relative px-8 py-4 bg-white text-black font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/90 text-base" style={{ fontFamily: 'Inter, sans-serif' }} href="https://docs.google.com/forms/d/e/1FAIpQLSeFZHIXnUFz46NuwibriOUkL7rEjk-PQetA8X0z2o9TCQK4pA/viewform" target="_blank" rel="noopener noreferrer">
               <span className="relative z-10 flex items-center">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
                 </svg>
                 Join Now
               </span>
             </a>
-            
-            <a className="group relative px-6 py-3 bg-transparent border border-white/20 hover:border-white/30 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/5 text-sm" style={{ fontFamily: 'Inter, sans-serif' }} href="https://www.meetup.com/aws-cloud-club-mjcet/" target='_blank' >
+
+            <a className="group relative px-8 py-4 bg-transparent border border-white/20 hover:border-white/30 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/5 text-base" style={{ fontFamily: 'Inter, sans-serif' }} href="https://www.meetup.com/aws-cloud-club-mjcet/" target='_blank' >
               <span className="relative z-10 flex items-center">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 Explore Events
@@ -181,15 +179,15 @@ function Home() {
           </div>
 
           {/* Instagram follow link — compact, below the two CTAs */}
-          <div className="mt-5 flex justify-center">
+          <div className="mt-7 flex justify-center">
             <a
               href="https://www.instagram.com/awsclub.mjcet/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors duration-300"
+              className="group inline-flex items-center gap-2 text-base text-white/60 hover:text-white transition-colors duration-300"
               style={{ fontFamily: 'Inter, sans-serif' }}
             >
-              <svg className="w-4 h-4 text-white/70 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="w-5 h-5 text-white/70 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 2.163c3.204 0 3.584.012 4.849.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.849.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
               </svg>
               <span>Follow us on Instagram</span>
@@ -200,7 +198,7 @@ function Home() {
       </div>
 
       {/* About Us Section */}
-      <div className="relative py-20 bg-gray-900/80">
+      <div className="relative py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
@@ -289,7 +287,7 @@ function Home() {
       </div>
 
       {/* Our Speciality Section */}
-      <div className="relative py-20 bg-gray-900/80">
+      <div className="relative py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -431,7 +429,7 @@ function Home() {
       </div>
 
       {/* Testimonials Section */}
-      <div className="relative py-20 bg-gray-900/80">
+      <div className="relative py-20 bg-gray-900">
         <div className="max-w-6xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-16">
