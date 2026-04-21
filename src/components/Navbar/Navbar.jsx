@@ -8,6 +8,7 @@ const membershipFormLink = "https://docs.google.com/forms/d/e/1FAIpQLSeFZHIXnUFz
 // Navigation items
 const navItems = [
   { name: "Home", link: "/" },
+  { name: "SCD", link: "/student-community-days" },
   { name: "About", link: "/about" },
   { name: "Events", link: "/events" },
   // { name: "Achievements", link: "/achievements" },
@@ -23,7 +24,7 @@ const socialLinks = [
   { name: "Github", link: "#" },
 ];
 
-const Navbar = () => {
+const Navbar = ({ hasPromoBar = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -41,22 +42,42 @@ const Navbar = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
         className={cn(
-          "hidden md:flex max-w-fit fixed top-3 inset-x-0 mx-auto border border-transparent border-gray-200/[0.2] rounded-full bg-black bg-black/70 backdrop-blur-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-8 py-2 items-center justify-center space-x-4"
+          "hidden md:flex max-w-fit fixed inset-x-0 mx-auto border border-transparent border-gray-200/[0.2] rounded-full bg-black bg-black/70 backdrop-blur-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] p-2 items-center justify-center space-x-4 transition-[top] duration-300",
+          hasPromoBar ? "top-12" : "top-3"
         )}
       >
-        {navItems.map((navItem, idx) => (
-          <Link
-            key={`link-desktop-${idx}`}
-            to={navItem.link}
-            className={cn(
-              "relative items-center flex space-x-1 text-neutral-600 hover:text-neutral-500 text-neutral-50 dark:hover:text-neutral-300 group",
-              location.pathname === navItem.link && "text-blue-600 dark:text-blue-400"
-            )}
-          >
-            <span className="text-sm">{navItem.name}</span>
-            <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-          </Link>
-        ))}
+        {navItems.map((navItem, idx) => {
+          // Special glowing neon nav link for SCD
+          if (navItem.name === "SCD") {
+            return (
+              <Link
+                key={`link-desktop-${idx}`}
+                to={navItem.link}
+                className="neon-border-wrapper p-[2px] ml-2 inline-flex"
+              >
+                <div className="neon-border-glow animate-spin-slow"></div>
+                <div className="neon-border-inner bg-black text-violet-400 font-bold px-4 py-1 flex items-center shadow-[inset_0_0_15px_rgba(139,92,246,0.18)] hover:shadow-[inset_0_0_20px_rgba(139,92,246,0.35)] hover:text-violet-300 transition-all duration-300">
+                  <span className="text-sm tracking-widest">{navItem.name}</span>
+                </div>
+              </Link>
+            );
+          }
+
+          // Default nav item rendering
+          return (
+            <Link
+              key={`link-desktop-${idx}`}
+              to={navItem.link}
+              className={cn(
+                "relative items-center flex space-x-1 text-neutral-600 hover:text-neutral-500 text-neutral-50 dark:hover:text-neutral-300 group",
+                location.pathname === navItem.link && "text-blue-600 dark:text-blue-400"
+              )}
+            >
+              <span className="text-sm">{navItem.name}</span>
+              <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-transparent via-blue-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </Link>
+          );
+        })}
         <a
           href={membershipFormLink}
           target="_blank"
@@ -69,7 +90,10 @@ const Navbar = () => {
       </motion.div>
 
       {/* Mobile Navigation Button */}
-      <div className="md:hidden fixed top-0 right-0 z-[5000] p-4">
+      <div className={cn(
+        "md:hidden fixed right-0 z-[5000] p-4 transition-[top] duration-300",
+        hasPromoBar ? "top-9" : "top-0"
+      )}>
         <button 
           onClick={toggleMenu}
           className="p-2 rounded-full bg-black text-white hover:bg-gray-800 focus:outline-none"
