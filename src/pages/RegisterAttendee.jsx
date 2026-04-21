@@ -18,18 +18,12 @@ const RegisterAttendee = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
   const [selectedTier, setSelectedTier] = useState(null);
-  const [showQR, setShowQR] = useState(false);
   const [transactionId, setTransactionId] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!selectedTier) {
       setError('Please select a registration type.');
-      return;
-    }
-    if (!showQR) {
-      setError(null);
-      setShowQR(true);
       return;
     }
     if (!transactionId || transactionId.trim() === '') {
@@ -247,7 +241,7 @@ const RegisterAttendee = () => {
             </div>
           )}
 
-          {showQR && selectedTier && (
+          {selectedTier && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
@@ -278,7 +272,7 @@ const RegisterAttendee = () => {
 
           <div className="pt-6">
             <button disabled={loading} className={`w-full bg-white text-black font-semibold py-4 rounded-xl transition-colors ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-200'}`}>
-              {loading ? 'Processing...' : (!showQR ? 'Continue to Payment' : 'Complete Registration')}
+              {loading ? 'Processing...' : 'Complete Registration'}
             </button>
             <p className="text-center text-xs text-gray-600 mt-4">By registering, you agree to our Terms of Service & Privacy Policy.</p>
           </div>
