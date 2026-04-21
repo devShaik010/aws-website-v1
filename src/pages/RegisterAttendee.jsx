@@ -1,9 +1,88 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { supabase } from '../supabaseClient';
+import { initiatePayment, tiers } from '../razorpayHandler';
 
 const RegisterAttendee = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    gender: '',
+    phone: '',
+    email: '',
+    isMeetupMember: 'yes',
+  });
   const [isStudent, setIsStudent] = useState('yes');
   const [hasJoinedCommunity, setHasJoinedCommunity] = useState('yes');
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(null);
+  const [selectedTier, setSelectedTier] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!selectedTier) {
+      setError('Please select a registration type.');
+      return;
+    }
+    setError(null);
+    setLoading(true);
+
+    initiatePayment({
+      tier: selectedTier,
+      attendeeData: formData,
+      onSuccess: async (paymentInfo) => {
+        const { error } = await supabase
+          .from('attendees')
+          .insert([{
+            full_name: formData.fullName,
+            gender: formData.gender,
+            phone: formData.phone,
+            email: formData.email,
+            is_meetup_member: formData.isMeetupMember === 'yes',
+            tier: paymentInfo.tier,
+            amount_paid: paymentInfo.amount,
+            payment_id: paymentInfo.razorpay_payment_id,
+          }])
+
+        setLoading(false);
+
+        if (error) {
+          if (error.code === '23505') {
+            setError('This email is already registered!');
+          } else {
+            setError('Payment succeeded but registration failed. Save this payment ID: ' + paymentInfo.razorpay_payment_id);
+          }
+        } else {
+          setSubmitted(true);
+        }
+      },
+      onFailure: (message) => {
+        setLoading(false);
+        setError(message);
+      },
+    });
+  };
+
+  if (submitted) {
+    return (
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-32 pb-24 font-sans flex items-center justify-center px-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="w-full max-w-xl bg-[#111] border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-2xl text-center"
+        >
+          <div className="inline-flex w-16 h-16 bg-violet-500/10 text-violet-500 rounded-2xl items-center justify-center mb-6 border border-violet-500/20">
+            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h2 className="text-2xl font-bold mb-3">Success!</h2>
+          <p className="text-gray-300">🎉 You're registered! See you at the event.</p>
+        </motion.div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white pt-32 pb-24 font-sans flex items-center justify-center px-6">
@@ -23,17 +102,17 @@ const RegisterAttendee = () => {
           <p className="text-gray-400">Secure your pass for Student Community Day.</p>
         </div>
 
-        <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-2">
             <label className="text-sm font-medium text-gray-300">Full Name</label>
-            <input type="text" className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-all" placeholder="John Doe" />
+            <input type="text" value={formData.fullName} onChange={(e) => setFormData({...formData, fullName: e.target.value})} className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-all" placeholder="John Doe" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-sm font-medium text-gray-300">Gender</label>
-              <select className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-gray-300 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-all appearance-none cursor-pointer">
-                <option value="" disabled selected>Select Gender</option>
+              <select value={formData.gender} onChange={(e) => setFormData({...formData, gender: e.target.value})} className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-gray-300 focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-all appearance-none cursor-pointer">
+                <option value="" disabled>Select Gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
@@ -43,13 +122,13 @@ const RegisterAttendee = () => {
             
             <div className="space-y-2">
               <label className="text-sm font-medium text-gray-300">Phone Number</label>
-              <input type="tel" className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-all" placeholder="+91 9876543210" />
+              <input type="tel" value={formData.phone} onChange={(e) => setFormData({...formData, phone: e.target.value})} className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-all" placeholder="+91 9876543210" />
             </div>
           </div>
 
           <div className="space-y-2">
             <label className="text-sm font-medium text-gray-300">Email Address</label>
-            <input type="email" className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-all" placeholder="john@example.com" />
+            <input type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-all" placeholder="john@example.com" />
           </div>
 
           <div className="space-y-2">
@@ -59,14 +138,14 @@ const RegisterAttendee = () => {
                 <div className={`w-5 h-5 rounded-full border flex items-center justify-center transition-all ${hasJoinedCommunity === 'yes' ? 'border-violet-500' : 'border-gray-500 group-hover:border-gray-400'}`}>
                   {hasJoinedCommunity === 'yes' && <div className="w-2.5 h-2.5 bg-violet-500 rounded-full" />}
                 </div>
-                <input type="radio" value="yes" checked={hasJoinedCommunity === 'yes'} onChange={() => setHasJoinedCommunity('yes')} className="hidden" />
+                <input type="radio" value="yes" checked={hasJoinedCommunity === 'yes'} onChange={() => {setHasJoinedCommunity('yes'); setFormData({...formData, isMeetupMember: 'yes'});}} className="hidden" />
                 <span className="text-gray-300">Yes</span>
               </label>
               <label className="flex items-center gap-2 cursor-pointer group">
                 <div className={`w-5 h-5 rounded-full border flex items-center justify-center transition-all ${hasJoinedCommunity === 'no' ? 'border-violet-500' : 'border-gray-500 group-hover:border-gray-400'}`}>
                   {hasJoinedCommunity === 'no' && <div className="w-2.5 h-2.5 bg-violet-500 rounded-full" />}
                 </div>
-                <input type="radio" value="no" checked={hasJoinedCommunity === 'no'} onChange={() => setHasJoinedCommunity('no')} className="hidden" />
+                <input type="radio" value="no" checked={hasJoinedCommunity === 'no'} onChange={() => {setHasJoinedCommunity('no'); setFormData({...formData, isMeetupMember: 'no'});}} className="hidden" />
                 <span className="text-gray-300">No</span>
               </label>
             </div>
@@ -134,17 +213,40 @@ const RegisterAttendee = () => {
             )}
           </AnimatePresence>
 
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-gray-300">Ticket Type</label>
-            <select className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-all appearance-none cursor-pointer">
-              <option value="solo">Individual Pass (₹150)</option>
-              <option value="group">Group Pass - 4 People (₹400)</option>
-            </select>
+          <div className="flex flex-col gap-3 mt-4">
+            <p className="text-sm text-gray-400">Select Registration Type</p>
+            <div className="flex gap-4">
+              {tiers.map((tier) => {
+                const isSelected = selectedTier?.id === tier.id;
+                return (
+                  <button
+                    key={tier.id}
+                    type="button"
+                    onClick={() => setSelectedTier(tier)}
+                    className={`flex-1 border rounded-xl p-4 text-left transition-all duration-200 ${
+                      isSelected
+                        ? 'border-violet-500 bg-violet-500/10 text-violet-400'
+                        : 'border-white/10 text-gray-400 hover:border-violet-500/50'
+                    }`}
+                  >
+                    <p className="font-semibold text-white">{tier.label}</p>
+                    <p className="text-xs text-gray-500">{tier.description}</p>
+                    <p className="text-lg font-bold mt-1 text-violet-400">₹{tier.price}</p>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
+          {error && (
+            <div className="text-red-400 text-sm text-center">
+              {error}
+            </div>
+          )}
+
           <div className="pt-6">
-            <button className="w-full bg-white hover:bg-gray-200 text-black font-semibold py-4 rounded-xl transition-colors">
-              Continue to Payment
+            <button disabled={loading} className={`w-full bg-white text-black font-semibold py-4 rounded-xl transition-colors ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-200'}`}>
+              {loading ? 'Processing...' : 'Continue to Payment'}
             </button>
             <p className="text-center text-xs text-gray-600 mt-4">By registering, you agree to our Terms of Service & Privacy Policy.</p>
           </div>

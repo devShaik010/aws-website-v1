@@ -610,11 +610,11 @@ const StudentCommunityDays = () => {
                 <span className="text-violet-400 text-sm font-semibold tracking-wider uppercase mb-2">Solo</span>
                 <h3 className="text-3xl font-bold mb-4">Individual Pass</h3>
                 <div className="flex items-baseline gap-2 mb-1">
-                  <span className="text-5xl font-black">₹150</span>
+                  <span className="text-5xl font-black">₹200</span>
                   <span className="text-gray-500">/person</span>
                 </div>
                 <div className="flex items-center gap-2 mb-8">
-                  <span className="text-gray-500 line-through text-sm">₹250</span>
+                  <span className="text-gray-500 line-through text-sm">₹300</span>
                   <span className="text-violet-400/80 text-xs">Save ₹100</span>
                 </div>
                 <ul className="space-y-4 mb-10 flex-grow text-gray-400">
@@ -635,12 +635,12 @@ const StudentCommunityDays = () => {
                 <span className="text-violet-400 text-sm font-semibold tracking-wider uppercase mb-2">Squad</span>
                 <h3 className="text-3xl font-bold mb-4">Group Pass (4 People)</h3>
                 <div className="flex items-baseline gap-2 mb-1 flex-wrap">
-                  <span className="text-5xl font-black">₹400</span>
+                  <span className="text-5xl font-black">₹600</span>
                   <span className="text-gray-500">/total</span>
                 </div>
                 <div className="flex items-center gap-2 mb-8 flex-wrap">
                   <span className="text-gray-500 line-through text-sm">₹800</span>
-                  <span className="text-violet-400 text-xs bg-violet-500/10 px-2 py-0.5 rounded-md border border-violet-500/20 font-semibold">Save ₹400</span>
+                  <span className="text-violet-400 text-xs bg-violet-500/10 px-2 py-0.5 rounded-md border border-violet-500/20 font-semibold">Save ₹200</span>
                 </div>
                 <ul className="space-y-4 mb-10 flex-grow text-gray-400">
                   <li className="flex gap-3 items-center text-gray-300"><CheckIcon color="text-violet-400"/> Everything in Individual Pass</li>
