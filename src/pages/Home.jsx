@@ -286,6 +286,87 @@ function Home() {
         </div>
       </div>
 
+      {/* Student Community Day Promo Banner */}
+      <div className="relative py-20 bg-black overflow-hidden">
+        {/* Ambient glows */}
+        <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-violet-600/10 blur-[120px] pointer-events-none" />
+        <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full bg-fuchsia-500/10 blur-[120px] pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto px-6 relative">
+          <div className="relative rounded-[2rem] overflow-hidden border border-violet-500/20 bg-gradient-to-br from-white/[0.04] to-white/[0.01] backdrop-blur-xl p-10 md:p-16">
+            {/* Grid texture overlay */}
+            <div
+              className="absolute inset-0 opacity-[0.03] pointer-events-none"
+              style={{
+                backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+                backgroundSize: '28px 28px',
+              }}
+            />
+
+            <div className="relative flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16">
+              {/* Left content */}
+              <div className="flex-1 text-center md:text-left">
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-violet-500/30 bg-violet-500/10 mb-5">
+                  <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
+                  <span className="text-violet-400 text-xs font-semibold tracking-wider uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>Flagship Event · May 2026</span>
+                </div>
+
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  AWS Student <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-violet-500 to-fuchsia-500">Community Day</span>
+                </h2>
+
+                <p className="text-white/60 text-base md:text-lg leading-relaxed mb-8 max-w-xl" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  A premier one-day, student-driven conference featuring keynotes, workshops, panel discussions, and networking — all under one roof at MJCET. 800+ attendees. Industry experts. Swag. And memories for a lifetime.
+                </p>
+
+                {/* Pricing pills */}
+                <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-8">
+                  <span className="inline-flex items-center gap-1.5 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-white/80 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    <svg className="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                    Solo · ₹300
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-4 py-2 bg-violet-500/10 border border-violet-500/20 rounded-full text-sm text-violet-300 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    <svg className="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    Squad (4) · ₹1000
+                  </span>
+                </div>
+
+                {/* CTA */}
+                <Link
+                  to="/student-community-days"
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full font-semibold text-black transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:shadow-[0_0_60px_rgba(139,92,246,0.7)]"
+                  style={{ background: 'linear-gradient(135deg, #a78bfa, #8b5cf6, #d946ef)', fontFamily: 'Inter, sans-serif' }}
+                >
+                  Explore SCD 2026
+                  <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </div>
+
+              {/* Right — stat cards */}
+              <div className="grid grid-cols-2 gap-4 shrink-0 w-full md:w-auto">
+                {[
+                  { value: '800+', label: 'Attendees' },
+                  { value: '3+', label: 'Session Tracks' },
+                  { value: '1 Day', label: 'Packed Full' },
+                  { value: 'May 2026', label: 'Coming Soon' },
+                ].map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="flex flex-col items-center justify-center text-center p-5 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md min-w-[120px]"
+                  >
+                    <span className="text-2xl font-black text-white mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>{stat.value}</span>
+                    <span className="text-xs text-white/50 font-medium tracking-wide uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Our Speciality Section */}
       <div className="relative py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-6">
