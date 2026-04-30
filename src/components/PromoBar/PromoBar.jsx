@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const items = [
   'AWS Student Community Day 2026',
   'Limited Early Bird Tickets',
-  'May 2026  ·  MJCET Hyderabad',
+  'June 2026  ·  MJCET Hyderabad',
   'Keynotes · Workshops · Hands-on Labs',
   'Register Now',
 ];

@@ -351,7 +351,7 @@ function Home() {
                   { value: '800+', label: 'Attendees' },
                   { value: '3+', label: 'Session Tracks' },
                   { value: '1 Day', label: 'Packed Full' },
-                  { value: 'May 2026', label: 'Coming Soon' },
+                  { value: 'June 2026', label: 'Coming Soon' },
                 ].map((stat) => (
                   <div
                     key={stat.label}

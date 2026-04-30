@@ -20,7 +20,7 @@ function Events() {
     {
       id: 1,
       title: "AWS Student Community Day 2026",
-      date: "May 2026",
+      date: "June 2026",
       time: "Full day · Opening to closing keynote",
       location: "Muffakham Jah College of Engineering, Hyderabad",
       type: "Flagship Conference",
