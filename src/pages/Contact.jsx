@@ -6,7 +6,7 @@ import React from 'react';
 const socialCards = [
     { 
         name: "Meetup Page", 
-        url: "https://www.meetup.com/aws-cloud-club-mjcet/", 
+        url: "https://www.meetup.com/aws-sbg-mjcet/", 
         imageSrc: "/images/meetup.avif", 
         description: "Join our community events and gatherings. RSVP for our next session!",
         buttonText: "Go to Meetup",

@@ -15,7 +15,7 @@ function Home() {
   // Testimonials data
   const testimonials = [
     {
-      quote: "Joining MJCET AWS Cloud Club was the best decision of my academic journey. The workshops on EC2 and S3 were incredibly hands-on. I learned more in 3 months than entire semester!",
+      quote: "Joining MJCET AWS Student Builder Group was the best decision of my academic journey. The workshops on EC2 and S3 were incredibly hands-on. I learned more in 3 months than entire semester!",
       name: "Mohammed Zubair",
       role: "3rd Year CSE Student",
       company: "MJCET"
@@ -133,7 +133,7 @@ function Home() {
           <div className="mb-6">
             <span className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 text-sm font-medium rounded-full" style={{ fontFamily: 'Inter, sans-serif' }}>
               <span className="mr-2 px-2 py-0.5 bg-white text-black text-sm rounded-full font-semibold">New</span>
-              Telangana's first cloud club
+              Telangana&apos;s biggest and first AWS student community
             </span>
           </div>
 
@@ -145,7 +145,7 @@ function Home() {
             </h1>
             <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               <span className="text-white">AWS</span>
-              <span className="text-white/90"> Cloud Club</span>
+              <span className="text-white/90"> Student Builder Group</span>
             </div>
           </div>
 
@@ -167,7 +167,7 @@ function Home() {
               </span>
             </a>
 
-            <a className="group relative px-8 py-4 bg-transparent border border-white/20 hover:border-white/30 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/5 text-base" style={{ fontFamily: 'Inter, sans-serif' }} href="https://www.meetup.com/aws-cloud-club-mjcet/" target='_blank' >
+            <a className="group relative px-8 py-4 bg-transparent border border-white/20 hover:border-white/30 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:bg-white/5 text-base" style={{ fontFamily: 'Inter, sans-serif' }} href="https://www.meetup.com/aws-sbg-mjcet/" target='_blank' >
               <span className="relative z-10 flex items-center">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -197,6 +197,47 @@ function Home() {
         </div>
       </div>
 
+      {/* Our Evolution Section */}
+      <div className="relative py-20 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Left Side - Image */}
+            <div className="relative group">
+              <div className="relative overflow-hidden rounded-2xl">
+                <img
+                  src="/images/second_section_image/AWS_SBG.png"
+                  alt="AWS Student Builder Group"
+                  className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/10"></div>
+              </div>
+            </div>
+
+            {/* Right Side - Content */}
+            <div className="relative text-center lg:text-left">
+              <div className="mb-6">
+                <span className="text-white/60 text-sm font-medium tracking-wider uppercase mb-4 block" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  Our Evolution
+                </span>
+                <h2 className="text-[1.75rem] sm:text-4xl lg:text-5xl tracking-tight font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  Levelling up from cloud <br /> club to builder group
+                </h2>
+              </div> 
+
+              <div className="space-y-6 text-white/70 leading-relaxed text-lg" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <p>
+                  We are thrilled to announce our transformation into an official AWS Student Builder Group! This upgrade signifies our commitment to providing deeper, more hands-on experiences with Amazon Web Services.
+                </p>
+                <p>
+                  As a Builder Group, we're not just discussing cloud concepts; we're actively constructing solutions, preparing for industry-recognized certifications, and building the future of tech. Join us in this exciting new chapter as we level up our skills and build together.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* About Us Section */}
       <div className="relative py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-6">
@@ -209,7 +250,7 @@ function Home() {
                 <div className="relative overflow-hidden rounded-2xl">
                   <img
                     src="/images/team-1.jpg"
-                    alt="MJCET AWS Cloud Club Team"
+                    alt="MJCET AWS Student Builder Group Team"
                     className="w-full h-auto group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/20"></div>
@@ -250,20 +291,20 @@ function Home() {
             </div>
 
             {/* Right Side - Content */}
-            <div className="relative ">
+            <div className="relative text-center lg:text-left">
               <div className="mb-6">
                 <span className="text-white/60 text-sm font-medium tracking-wider uppercase mb-4 block" style={{ fontFamily: 'Inter, sans-serif' }}>
                   About Us
                 </span>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <h2 className="text-[1.75rem] sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
                   Building Tomorrow's
-                  <span className="block text-white/90">Cloud Experts</span>
+                  <span className="block text-white/90">Cloud and AI Experts</span>
                 </h2>
               </div>
 
               <div className="space-y-6 text-white/70 leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
                 <p className="text-lg">
-                  MJCET AWS Cloud Club is where students transform into industry-ready cloud professionals. We focus on practical learning through hands-on workshops, real-world projects, and comprehensive certification guidance.
+                  MJCET AWS Student Builder Group is where students transform into industry-ready cloud professionals. We focus on practical learning through hands-on workshops, real-world projects, and comprehensive certification guidance.
                 </p>
                 
                 <p>
@@ -287,7 +328,7 @@ function Home() {
       </div>
 
       {/* Student Community Day Promo Banner */}
-      <div className="relative py-20 bg-black overflow-hidden">
+      <div className="relative py-20 bg-gray-900 overflow-hidden">
         {/* Ambient glows */}
         <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-violet-600/10 blur-[120px] pointer-events-none" />
         <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full bg-fuchsia-500/10 blur-[120px] pointer-events-none" />
@@ -309,7 +350,7 @@ function Home() {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-violet-500/30 bg-violet-500/10 mb-5">
                   <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
-                  <span className="text-violet-400 text-xs font-semibold tracking-wider uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>Flagship Event · May 2026</span>
+                  <span className="text-violet-400 text-xs font-semibold tracking-wider uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>Flagship Event · JUNE 2026</span>
                 </div>
 
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -377,10 +418,10 @@ function Home() {
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
               Complete Solutions
-              <span className="block text-white/90">for your Cloud Journey</span>
+              <span className="block text-white/90">for your Tech Journey</span>
             </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
-              MJCET AWS Cloud Club provides comprehensive cloud education and certification guidance to help you master the latest AWS technologies and advance your career.
+              MJCET AWS Student Builder Group provides comprehensive cloud AI education and certification guidance to help you master the latest AWS technologies and advance your career.
             </p>
           </div>
 

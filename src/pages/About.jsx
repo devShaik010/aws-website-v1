@@ -20,11 +20,11 @@ function About() {
           {/* Text Side */}
           <div className="w-full md:w-1/2 space-y-6">
             <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              AWS Cloud Club MJCET
+                AWS Student Builder Group Mjcet
             </h1>
             
             <p className="text-gray-300 text-lg leading-relaxed">
-              Welcome to the AWS Cloud club at MJCET! We are a community of cloud enthusiasts, 
+              Welcome to the AWS Student Builder Group at MJCET! We are a community of cloud enthusiasts, 
               developers, and future architects passionate about Amazon Web Services technology.
             </p>
 

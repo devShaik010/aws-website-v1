@@ -235,7 +235,7 @@ const StudentCommunityDays = () => {
             className="flex flex-col items-center text-center space-y-6"
           >
             <motion.div variants={fadeInUp} className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
-              <span className="text-sm font-medium tracking-wide text-gray-300 uppercase">AWS Cloud Clubs MJCET Presents</span>
+              <span className="text-sm font-medium tracking-wide text-gray-300 uppercase">AWS Student Builder Group MJCET Presents</span>
             </motion.div>
             
             <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.1]">
@@ -269,10 +269,10 @@ const StudentCommunityDays = () => {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold mb-6 text-violet-400">About the Event</motion.h2>
             <motion.p variants={fadeInUp} className="text-gray-300 text-lg leading-relaxed mb-6">
-              <span className="font-bold text-white">AWS Cloud Club MJCET</span> is a dynamic, student-led community supported by <span className="text-violet-400 font-semibold">Amazon Web Services (AWS)</span>. The AWS Student Community Day at MJCET will be held in <span className="font-bold text-white">June 2026</span>. Our mission is to empower students with the right skills, tools, and opportunities to explore the cloud, build innovative solutions, and collaborate with peers and industry leaders. We regularly host technical workshops, hackathons, and mentorship sessions to help students transform ideas into impactful projects.
+              <span className="font-bold text-white">AWS Student Builder Group MJCET</span> is a dynamic, student-led community supported by <span className="text-violet-400 font-semibold">Amazon Web Services (AWS)</span>. The AWS Student Community Day at MJCET will be held in <span className="font-bold text-white">June 2026</span>. Our mission is to empower students with the right skills, tools, and opportunities to explore the cloud, build innovative solutions, and collaborate with peers and industry leaders. We regularly host technical workshops, hackathons, and mentorship sessions to help students transform ideas into impactful projects.
             </motion.p>
             <motion.p variants={fadeInUp} className="text-gray-400 text-lg leading-relaxed">
-              The <span className="text-violet-400 font-semibold">AWS Student Community Day (SCD)</span> is the flagship annual event of the AWS Cloud Club. It is a one-day, <span className="text-white font-medium">student-driven conference</span> designed to celebrate technology, innovation, and collaboration. Organized entirely by student leaders with guidance from AWS, SCD brings together cloud enthusiasts, developers, and industry experts to share knowledge, showcase real-world use cases, and inspire the next generation of builders.
+              The <span className="text-violet-400 font-semibold">AWS Student Community Day (SCD)</span> is the flagship annual event of the AWS Student Builder Group. It is a one-day, <span className="text-white font-medium">student-driven conference</span> designed to celebrate technology, innovation, and collaboration. Organized entirely by student leaders with guidance from AWS, SCD brings together cloud enthusiasts, developers, and industry experts to share knowledge, showcase real-world use cases, and inspire the next generation of builders.
             </motion.p>
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center group">
@@ -317,7 +317,7 @@ const StudentCommunityDays = () => {
               </p>
 
               <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed border-l-2 border-violet-500/40 pl-6">
-                While a standard Cloud Club event focuses on one topic, a Student Community Day features <span className="text-violet-400 font-bold">3+ topics, sessions, and speakers</span> to gather, educate, and celebrate with a wider array of audiences.
+                While a standard AWS Student Builder Group event focuses on one topic, a Student Community Day features <span className="text-violet-400 font-bold">3+ topics, sessions, and speakers</span> to gather, educate, and celebrate with a wider array of audiences.
               </p>
             </div>
           </motion.div>

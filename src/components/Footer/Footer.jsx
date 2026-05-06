@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const socialLinks = [
-  { name: 'Meetup', url: 'https://www.meetup.com/aws-cloud-club-mjcet/', icon: 'M' },
+  { name: 'Meetup', url: 'https://www.meetup.com/aws-sbg-mjcet/', icon: 'M' },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/company/aws-cloud-club-mjcet/', icon: 'in' },
   { name: 'Instagram', url: 'https://www.instagram.com/awsclub.mjcet/', icon: 'I' },
 ];
@@ -93,7 +93,7 @@ const Footer = () => {
                   <ul className="space-y-2">
                     {section.items.map((item) => (
                       <li key={item}>
-                        <Link to="https://www.meetup.com/aws-cloud-club-mjcet/" className="text-gray-400 hover:text-white transition-colors">
+                        <Link to="https://www.meetup.com/aws-sbg-mjcet/" className="text-gray-400 hover:text-white transition-colors">
                           {item}
                         </Link>
                       </li>
@@ -155,7 +155,7 @@ const Footer = () => {
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-center justify-between items-center">
           <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} AWS Cloud Club MJCET. All rights reserved.
+            &copy; {new Date().getFullYear()} AWS Student Builder Group Mjcet. All rights reserved.
           </p>
         </div>
         

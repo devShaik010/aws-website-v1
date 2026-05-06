@@ -24,7 +24,7 @@ function Events() {
       time: "Full day · Opening to closing keynote",
       location: "Muffakham Jah College of Engineering, Hyderabad",
       type: "Flagship Conference",
-      description: "The flagship annual event of AWS Cloud Club MJCET — a one-day, student-led conference bringing together cloud enthusiasts, developers, and industry experts. Expect 3+ tracks across keynotes, hands-on workshops, lightning talks, and panel discussions spanning the Main Stage, Breakout Space, and AI Lab. Limited early-bird tickets available now.",
+      description: "The flagship annual event of AWS Student Builder Group Mjcet — a one-day, student-led conference bringing together cloud enthusiasts, developers, and industry experts. Expect 3+ tracks across keynotes, hands-on workshops, lightning talks, and panel discussions spanning the Main Stage, Breakout Space, and AI Lab. Limited early-bird tickets available now.",
       registrationLink: "/student-community-days",
       image: "/scd/About_the_Event_pic.jpeg",
       tags: ["Keynotes", "Workshops", "Hands-on Labs", "AWS", "Student-led", "Early Bird"]
@@ -39,8 +39,8 @@ function Events() {
       time: "9:00 AM(22-Nov) - 9:00 AM(23-Nov)",
       location: "Ghulam Ahmed Hall, MJCET",
       type: "Datathon",
-      description: "The Flagship event of AWS cloud club MJCET and IEEE SMC MJCET, 24-hour datathon event where students from various colleges came together to solve real-world problems using data science and machine learning. An event open to all enthusiastic minds across india.",
-      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/311883358/?eventOrigin=group_past_events",
+      description: "The Flagship event of AWS Student Builder Group Mjcet and IEEE SMC MJCET, 24-hour datathon event where students from various colleges came together to solve real-world problems using data science and machine learning. An event open to all enthusiastic minds across india.",
+      registrationLink: "https://www.meetup.com/aws-sbg-mjcet/events/311883358/?eventOrigin=group_past_events",
       image: "/images/datanyx.png",
       tags: ["Datathon", "AI ML", "Team building", "AWS", "Networking"]
     },
@@ -52,7 +52,7 @@ function Events() {
       location: "Seminar Hall, MJCET",
       type: "Workshop",
       description: "An exciting hands-on workshop designed to simplify Linux, explore game development, and provide direct learning from the AWS Community.",
-      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/311011732/",
+      registrationLink: "https://www.meetup.com/aws-sbg-mjcet/events/311011732/",
       image: "/images/amazon q.jpg",
       tags: ["Linux", "Amazon Q", "Generative AI", "AWS"]
     },
@@ -64,7 +64,7 @@ function Events() {
       location: "-",
       type: "Bootcamp",
       description: "month-long innovation sprint empowered students to build impactful, cloud-native solutions while working across domains like Artificial Intelligence, Cybersecurity, Internet of Things (IoT), and more",
-      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/308278850/",
+      registrationLink: "https://www.meetup.com/aws-sbg-mjcet/events/308278850/",
       image: "images/cloud ignite.jpg",
       tags: ["AWS", "Innovation", "Hands-on"],
       feedback: 4.7
@@ -77,7 +77,7 @@ function Events() {
       location: "Seminar Hall, MJCET",
       type: "Workshop",
       description: "The event featured hands-on workshops on Intel’s oneAPI and AWS services, giving participants practical exposure to real-world cloud tools.",
-      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/305556419/",
+      registrationLink: "https://www.meetup.com/aws-sbg-mjcet/events/305556419/",
       image: "images/cloud x.jpg",
       tags: ["Intel", "AI", "Hands-on"],
       feedback: 4.7
@@ -90,7 +90,7 @@ function Events() {
       location: "Seminar Hall, MJCET",
       type: "Workshop",
       description: "attendees explored essential AWS services like EC2, S3, VPC, and IAM—understanding not just what they are, but how they power real-world solutions.",
-      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/305118906/",
+      registrationLink: "https://www.meetup.com/aws-sbg-mjcet/events/305118906/",
       image: "/images/Infra camp.jpg",
       tags: ["AWS S3", "IAM", "AWS VPC"],
       feedback: 4.9
@@ -115,7 +115,7 @@ function Events() {
       location: "Seminar Hall, MJCET",
       type: "Workshop",
       description: " hosted an insightful Machine Learning API Workshop on November 16, 2024, aimed at bridging theoretical knowledge with real-world application of machine learning through AWS services.",
-      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/304520855/",
+      registrationLink: "https://www.meetup.com/aws-sbg-mjcet/events/304520855/",
       image: "/images/ML-API.jpg",
       tags: ["aws rekognition", "Amazon bedrock", "API"],
       attendees: 85,
@@ -143,7 +143,7 @@ function Events() {
       location: "Seminar Hall, MJCET",
       type: "Workshop",
       description: "Intensive workshop on AWS Solutions Architect concepts with hands-on labs and real-world scenarios.",
-      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/302364001/",
+      registrationLink: "https://www.meetup.com/aws-sbg-mjcet/events/302364001/",
       image: "/images/imagify.jpg",
       tags: ["Architecture", "Solutions", "Advanced"],
       attendees: 85,
@@ -157,7 +157,7 @@ function Events() {
       location: "Seminar Hall, MJCET",
       type: "Launch Event",
       description: "On 28th June 2024, we hosted an engaging event from 10:00AM to 12:00PM at the Block 4 Seminar Hall. Attendees had the opportunity to connect, learn, and collaborate on various topics related to cloud computing and Amazon Web Services (AWS). The inauguration of our club featured the esteemed presence of Mr. Faizal Khan, Community Lead of the AWS User Group and AWS Community Hero, as the distinguished Chief Guest.",
-      registrationLink: "https://www.meetup.com/aws-cloud-club-mjcet/events/301796921/",
+      registrationLink: "https://www.meetup.com/aws-sbg-mjcet/events/301796921/",
       image: "/images/inauguration.jpg",
       tags: ["Launch", "Networking", "Introduction"],
       attendees: 120,
@@ -413,7 +413,7 @@ function Events() {
             Join our community to receive exclusive invitations and early bird discounts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300" onClick={() => window.open('https://www.meetup.com/aws-cloud-club-mjcet/', "_blank")}>
+            <button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300" onClick={() => window.open('https://www.meetup.com/aws-sbg-mjcet', "_blank")}>
               Join Our Community
             </button>
             <button className="border border-purple-500 text-purple-400 hover:bg-purple-500/10 font-medium py-3 px-8 rounded-lg transition-all duration-300" onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeFZHIXnUFz46NuwibriOUkL7rEjk-PQetA8X0z2o9TCQK4pA/viewform', "_blank")}>
