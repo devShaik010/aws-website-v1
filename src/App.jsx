@@ -64,60 +64,34 @@ function Layout({ lenisRef }) {
 }
 
 function App() {
-  const [loading, setLoading] = useState(true);
   const lenisRef = useRef(null);
-
-  // Function to handle when loader completes
-  const handleLoadComplete = () => {
-    setLoading(false);
-  };
 
   // Initialize Lenis smooth scroll
   useEffect(() => {
-    if (!loading) {
-      const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smooth: true,
-      });
-      lenisRef.current = lenis;
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
+    lenisRef.current = lenis;
 
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-
+    function raf(time) {
+      lenis.raf(time);
       requestAnimationFrame(raf);
-
-      return () => {
-        lenis.destroy();
-        lenisRef.current = null;
-      };
     }
-  }, [loading]);
 
-  // Optional: Prevent scrolling when loader is active
-  useEffect(() => {
-    if (loading) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+    requestAnimationFrame(raf);
+
     return () => {
-      document.body.style.overflow = 'auto';
+      lenis.destroy();
+      lenisRef.current = null;
     };
-  }, [loading]);
+  }, []);
 
   return (
-    <>
-      {loading ? (
-        <ScrollyLoader onLoadComplete={handleLoadComplete} />
-      ) : (
-        <Router>
-          <Layout lenisRef={lenisRef} />
-        </Router>
-      )}
-    </>
+    <Router>
+      <Layout lenisRef={lenisRef} />
+    </Router>
   )
 }
 

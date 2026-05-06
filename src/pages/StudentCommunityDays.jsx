@@ -219,7 +219,7 @@ const StudentCommunityDays = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white pt-16 font-sans selection:bg-violet-500/30">
+    <div className="min-h-screen bg-gray-900 text-white pt-16 font-sans selection:bg-violet-500/30">
 
       {/* Hero Section */}
       <section className="relative px-6 md:px-12 lg:px-24 py-8 md:py-10 overflow-hidden">
@@ -264,7 +264,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* About Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 pb-32 bg-black border-t border-white/5">
+      <section className="px-6 md:px-12 lg:px-24 py-24 pb-32 bg-gray-900 border-t border-white/5">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold mb-6 text-violet-400">About the Event</motion.h2>
@@ -282,7 +282,7 @@ const StudentCommunityDays = () => {
                style={{ backgroundImage: "url('/scd/About_the_Event_pic.jpeg')" }}
              />
              {/* Gradient overlay for text contrast and premium feel */}
-             <div className="absolute inset-0 bg-gradient-to-tr from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-700" />
+             <div className="absolute inset-0 bg-gradient-to-tr from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-700" />
              {/* Subtle orange tint to match the brand */}
              <div className="absolute inset-0 bg-violet-500/10 mix-blend-overlay" />
           </motion.div>
@@ -290,7 +290,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* What are SCDs — Info Callout */}
-      <section className="px-6 md:px-12 lg:px-24 py-20 bg-[#0a0a0a]">
+      <section className="px-6 md:px-12 lg:px-24 py-20 bg-gray-900">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
@@ -325,7 +325,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Call for Speakers Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-black border-t border-white/5 relative overflow-hidden">
+      <section className="px-6 md:px-12 lg:px-24 py-24 bg-gray-900 border-t border-white/5 relative overflow-hidden">
         {/* Page-matching orange/gold ambient glows */}
         <div className="absolute top-1/4 -right-20 w-[500px] h-[500px] bg-violet-500/[0.07] rounded-full blur-[150px] pointer-events-none" />
         <div className="absolute bottom-0 -left-20 w-[400px] h-[400px] bg-fuchsia-500/[0.05] rounded-full blur-[120px] pointer-events-none" />
@@ -426,7 +426,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Call for Sponsors Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#0a0a0a] border-t border-white/5 relative overflow-hidden">
+      <section className="px-6 md:px-12 lg:px-24 py-24 bg-gray-900 border-t border-white/5 relative overflow-hidden">
         {/* Ambient glows — mirrored from Call for Speakers for continuity */}
         <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-violet-500/[0.07] rounded-full blur-[150px] pointer-events-none" />
         <div className="absolute bottom-0 -right-20 w-[400px] h-[400px] bg-fuchsia-500/[0.05] rounded-full blur-[120px] pointer-events-none" />
@@ -538,7 +538,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Beyond the Sessions Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#0a0a0a] border-t border-white/5">
+      <section className="px-6 md:px-12 lg:px-24 py-24 bg-gray-900 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
@@ -580,7 +580,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#0a0a0a]">
+      <section className="px-6 md:px-12 lg:px-24 py-24 bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             {/* Early Bird Banner */}
@@ -655,7 +655,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Speakers Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-black border-y border-white/5">
+      <section className="px-6 md:px-12 lg:px-24 py-24 bg-gray-900 border-y border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Masterclass Speakers</h2>
@@ -670,7 +670,7 @@ const StudentCommunityDays = () => {
                 className="relative aspect-[3/4] rounded-[2rem] overflow-hidden group border border-white/5 bg-white/5"
               >
                 {/* Simulated blurred image base */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] blur-xl opacity-80 group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a] to-gray-900 blur-xl opacity-80 group-hover:scale-110 transition-transform duration-700" />
                 <div className="absolute inset-0 backdrop-blur-2xl bg-black/40 flex flex-col items-center justify-center p-6 text-center z-10">
                   <div className="w-12 h-12 rounded-full border border-white/20 bg-white/10 mb-4 flex items-center justify-center backdrop-blur-md">
                      <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -687,7 +687,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Sponsors Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-[#0a0a0a]">
+      <section className="px-6 md:px-12 lg:px-24 py-24 bg-gray-900">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Partners & Sponsors</h2>
           <p className="text-gray-400 mb-16 max-w-2xl mx-auto">Backed by the best in the industry to bring this experience to you.</p>
@@ -706,7 +706,7 @@ const StudentCommunityDays = () => {
                 ) : (
                   <>
                     <div className="absolute inset-0 bg-white/5 blur-2xl group-hover:opacity-50 transition-opacity" />
-                    <div className="absolute inset-0 backdrop-blur-xl bg-[#0a0a0a]/60 flex items-center justify-center z-10">
+                    <div className="absolute inset-0 backdrop-blur-xl bg-gray-900/60 flex items-center justify-center z-10">
                       <span className="text-sm font-medium text-gray-500 tracking-wider">TBA</span>
                     </div>
                   </>
@@ -718,7 +718,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Location Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-black border-t border-white/5">
+      <section className="px-6 md:px-12 lg:px-24 py-24 bg-gray-900 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Venue & Location</h2>
