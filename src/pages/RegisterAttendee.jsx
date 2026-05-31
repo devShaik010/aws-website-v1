@@ -8,14 +8,14 @@ const tiers = [
   {
     id: 'individual',
     label: 'Individual',
-    price: 300,
+    price: 200,
     description: '1 person',
     cashfreeUrl: CASHFREE_URL_INDIVIDUAL,
   },
   {
     id: 'group',
     label: 'Group',
-    price: 1000,
+    price: 700,
     description: 'Up to 4 people',
     cashfreeUrl: CASHFREE_URL_GROUP,
   },

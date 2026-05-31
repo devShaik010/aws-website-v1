@@ -365,11 +365,11 @@ function Home() {
                 <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-8">
                   <span className="inline-flex items-center gap-1.5 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-white/80 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
                     <svg className="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                    Solo · ₹300
+                    Solo · ₹200
                   </span>
                   <span className="inline-flex items-center gap-1.5 px-4 py-2 bg-violet-500/10 border border-violet-500/20 rounded-full text-sm text-violet-300 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
                     <svg className="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                    Squad (4) · ₹1000
+                    Squad (4) · ₹700
                   </span>
                 </div>
 

@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npx eslint *)",
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "Bash(git stash *)"
     ]
   }
 }

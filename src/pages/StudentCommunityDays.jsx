@@ -219,7 +219,15 @@ const StudentCommunityDays = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white pt-16 font-sans selection:bg-violet-500/30">
+    <div
+      className="min-h-screen text-white pt-16 font-sans selection:bg-violet-500/30"
+      style={{
+        backgroundColor: '#09070d',
+        backgroundImage:
+          'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+        backgroundSize: '36px 36px',
+      }}
+    >
 
       {/* Hero Section */}
       <section className="relative px-6 md:px-12 lg:px-24 py-8 md:py-10 overflow-hidden">
@@ -264,7 +272,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* About Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 pb-32 bg-gray-900 border-t border-white/5">
+      <section className="px-6 md:px-12 lg:px-24 py-24 pb-32 border-t border-white/5">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={staggerContainer}>
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold mb-6 text-violet-400">About the Event</motion.h2>
@@ -290,7 +298,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* What are SCDs — Info Callout */}
-      <section className="px-6 md:px-12 lg:px-24 py-20 bg-gray-900">
+      <section className="px-6 md:px-12 lg:px-24 py-20">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
@@ -325,7 +333,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Call for Speakers Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-gray-900 border-t border-white/5 relative overflow-hidden">
+      <section className="px-6 md:px-12 lg:px-24 py-24 border-t border-white/5 relative overflow-hidden">
         {/* Page-matching orange/gold ambient glows */}
         <div className="absolute top-1/4 -right-20 w-[500px] h-[500px] bg-violet-500/[0.07] rounded-full blur-[150px] pointer-events-none" />
         <div className="absolute bottom-0 -left-20 w-[400px] h-[400px] bg-fuchsia-500/[0.05] rounded-full blur-[120px] pointer-events-none" />
@@ -426,7 +434,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Call for Sponsors Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-gray-900 border-t border-white/5 relative overflow-hidden">
+      <section className="px-6 md:px-12 lg:px-24 py-24 border-t border-white/5 relative overflow-hidden">
         {/* Ambient glows — mirrored from Call for Speakers for continuity */}
         <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-violet-500/[0.07] rounded-full blur-[150px] pointer-events-none" />
         <div className="absolute bottom-0 -right-20 w-[400px] h-[400px] bg-fuchsia-500/[0.05] rounded-full blur-[120px] pointer-events-none" />
@@ -538,7 +546,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Beyond the Sessions Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-gray-900 border-t border-white/5">
+      <section className="px-6 md:px-12 lg:px-24 py-24 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
@@ -580,24 +588,12 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-gray-900">
+      <section className="px-6 md:px-12 lg:px-24 py-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            {/* Early Bird Banner */}
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-violet-500/30 bg-violet-500/10 backdrop-blur-md"
-            >
-              <svg className="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span className="text-violet-400 text-xs font-bold uppercase tracking-[0.15em]">Early Bird · Limited Time</span>
-            </motion.div>
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Tickets & Pricing</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Booking early? You save. These are our <span className="text-violet-400 font-medium">early bird prices</span> — a thank-you for backing us before the gates open.
+              Pick the pass that fits you — one all-access ticket to everything we're packing into Student Community Day.
             </p>
           </div>
           
@@ -606,16 +602,11 @@ const StudentCommunityDays = () => {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="group relative p-[1px] rounded-[2rem] bg-gradient-to-b from-white/20 to-white/5 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative h-full bg-[#0f0f0f] rounded-[calc(2rem-1px)] p-10 flex flex-col">
-                <EarlyBirdTicket />
                 <span className="text-violet-400 text-sm font-semibold tracking-wider uppercase mb-2">Solo</span>
                 <h3 className="text-3xl font-bold mb-4">Individual Pass</h3>
-                <div className="flex items-baseline gap-2 mb-1">
-                  <span className="text-5xl font-black">₹300</span>
+                <div className="flex items-baseline gap-2 mb-8">
+                  <span className="text-5xl font-black">₹200</span>
                   <span className="text-gray-500">/person</span>
-                </div>
-                <div className="flex items-center gap-2 mb-8">
-                  <span className="text-gray-500 line-through text-sm">₹400</span>
-                  <span className="text-violet-400/80 text-xs">Save ₹100</span>
                 </div>
                 <ul className="space-y-4 mb-10 flex-grow text-gray-400">
                   <li className="flex gap-3 items-center"><CheckIcon /> Full day access</li>
@@ -631,16 +622,11 @@ const StudentCommunityDays = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-violet-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative h-full bg-[#120a1f] rounded-[calc(2rem-1px)] p-10 flex flex-col">
                 <div className="absolute top-0 left-10 inline-block px-3 py-1 bg-violet-500 text-black text-xs font-bold rounded-b-lg">POPULAR</div>
-                <EarlyBirdTicket />
                 <span className="text-violet-400 text-sm font-semibold tracking-wider uppercase mb-2">Squad</span>
                 <h3 className="text-3xl font-bold mb-4">Group Pass (4 People)</h3>
-                <div className="flex items-baseline gap-2 mb-1 flex-wrap">
-                  <span className="text-5xl font-black">₹1000</span>
+                <div className="flex items-baseline gap-2 mb-8 flex-wrap">
+                  <span className="text-5xl font-black">₹700</span>
                   <span className="text-gray-500">/total</span>
-                </div>
-                <div className="flex items-center gap-2 mb-8 flex-wrap">
-                  <span className="text-gray-500 line-through text-sm">₹1200</span>
-                  <span className="text-violet-400 text-xs bg-violet-500/10 px-2 py-0.5 rounded-md border border-violet-500/20 font-semibold">Save ₹200</span>
                 </div>
                 <ul className="space-y-4 mb-10 flex-grow text-gray-400">
                   <li className="flex gap-3 items-center text-gray-300"><CheckIcon color="text-violet-400"/> Everything in Individual Pass</li>
@@ -655,7 +641,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Speakers Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-gray-900 border-y border-white/5">
+      <section className="px-6 md:px-12 lg:px-24 py-24 border-y border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Masterclass Speakers</h2>
@@ -687,7 +673,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Sponsors Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-gray-900">
+      <section className="px-6 md:px-12 lg:px-24 py-24">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Partners & Sponsors</h2>
           <p className="text-gray-400 mb-16 max-w-2xl mx-auto">Backed by the best in the industry to bring this experience to you.</p>
@@ -718,7 +704,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Location Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 bg-gray-900 border-t border-white/5">
+      <section className="px-6 md:px-12 lg:px-24 py-24 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Venue & Location</h2>
@@ -945,50 +931,6 @@ const StudentCommunityDays = () => {
     </div>
   );
 };
-
-// Decorative Early Bird ticket stub for pricing cards
-const EarlyBirdTicket = () => (
-  <div className="absolute top-4 right-4 rotate-[14deg] pointer-events-none select-none z-20">
-    <div
-      className="relative transition-transform duration-500 group-hover:rotate-[18deg] group-hover:scale-105"
-      style={{ filter: 'drop-shadow(0 8px 18px rgba(139,92,246,0.5))' }}
-    >
-      <svg width="100" height="40" viewBox="0 0 100 40" className="block">
-        <defs>
-          <linearGradient id="earlyBirdGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#c4b5fd" />
-            <stop offset="50%" stopColor="#8b5cf6" />
-            <stop offset="100%" stopColor="#7c3aed" />
-          </linearGradient>
-        </defs>
-        {/* Ticket body with notched side edges */}
-        <path
-          d="M 4 0 L 96 0 A 4 4 0 0 1 100 4 L 100 16 A 4 4 0 0 0 100 24 L 100 36 A 4 4 0 0 1 96 40 L 4 40 A 4 4 0 0 1 0 36 L 0 24 A 4 4 0 0 0 0 16 L 0 4 A 4 4 0 0 1 4 0 Z"
-          fill="url(#earlyBirdGrad)"
-        />
-        {/* Top shine highlight */}
-        <path
-          d="M 4 0 L 96 0 A 4 4 0 0 1 100 4 L 100 10 L 0 10 L 0 4 A 4 4 0 0 1 4 0 Z"
-          fill="rgba(255,255,255,0.2)"
-        />
-        {/* Perforated divider between body and stub */}
-        <line x1="76" y1="6" x2="76" y2="34" stroke="rgba(0,0,0,0.35)" strokeWidth="1" strokeDasharray="2 2" />
-      </svg>
-      <div className="absolute inset-0 flex items-center">
-        <div className="pl-3 flex-1">
-          <div className="text-[9px] font-black text-black leading-[1] tracking-tight">EARLY</div>
-          <div className="text-[9px] font-black text-black leading-[1] tracking-tight mt-1">BIRD</div>
-        </div>
-        <div className="flex items-center justify-center w-[24px] h-full">
-          <svg className="w-3 h-3 text-black/60" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="9" />
-            <path d="M12 7v5l3 2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </div>
-      </div>
-    </div>
-  </div>
-);
 
 // Mini check icon component for pricing
 const CheckIcon = ({ color = "text-white" }) => (
