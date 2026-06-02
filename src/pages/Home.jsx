@@ -350,7 +350,7 @@ function Home() {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-violet-500/30 bg-violet-500/10 mb-5">
                   <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
-                  <span className="text-violet-400 text-xs font-semibold tracking-wider uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>Flagship Event · 6th JUNE 2026</span>
+                  <span className="text-violet-400 text-xs font-semibold tracking-wider uppercase" style={{ fontFamily: 'Inter, sans-serif' }}>Flagship Event · 10th JUNE 2026</span>
                 </div>
 
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -392,7 +392,7 @@ function Home() {
                   { value: '800+', label: 'Attendees' },
                   { value: '3+', label: 'Session Tracks' },
                   { value: '1 Day', label: 'Packed Full' },
-                  { value: '6th June 2026', label: 'Be ready' },
+                  { value: '10th June 2026', label: 'Be ready' },
                 ].map((stat) => (
                   <div
                     key={stat.label}

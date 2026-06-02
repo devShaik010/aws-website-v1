@@ -20,8 +20,8 @@ function Events() {
     {
       id: 1,
       title: "AWS Student Community Day 2026",
-      date: "6th June 2026",
-      time: "Full day · Opening to closing keynote",
+      date: "10th June 2026",
+      time: "9:00 AM – 5:00 PM",
       location: "Muffakham Jah College of Engineering, Hyderabad",
       type: "Flagship Conference",
       description: "The flagship annual event of AWS Student Builder Group Mjcet — a one-day, student-led conference bringing together cloud enthusiasts, developers, and industry experts. Expect 3+ tracks across keynotes, hands-on workshops, lightning talks, and panel discussions spanning the Main Stage, Breakout Space, and AI Lab. Limited early-bird tickets available now.",
