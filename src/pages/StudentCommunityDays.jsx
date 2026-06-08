@@ -25,7 +25,57 @@ const StudentCommunityDays = () => {
   };
 
   // Content configuration
-  const speakers = [1, 2, 3, 4];
+  const speakers = [
+    {
+      name: 'Gaurav Kankaria',
+      image: '/scd/speakers/Gaurav_Kankaria.png',
+      role: 'Head of Analytics & AI/ML @Oneture',
+      extra: 'Ex Data Scientist | ISBian',
+      badge: 'AWS Global AI Ambassador',
+      topic: 'AI First Future: Building Skills, Businesses & Careers in the Age of Intelligence',
+      blob: {
+        radius: '60% 40% 55% 45% / 55% 60% 40% 45%',
+        w: 180, h: 220,
+      },
+      shapes: [
+        { w: '75%', h: '80%', top: '0%', left: '50%', radius: '50% 50% 45% 55% / 55% 45% 55% 45%', from: 'rgba(139,92,246,0.18)', to: 'rgba(217,70,239,0.12)' },
+        { w: '55%', h: '65%', top: '10%', left: '60%', radius: '45% 55% 50% 50% / 50% 55% 45% 55%', from: 'rgba(139,92,246,0.1)', to: 'rgba(217,70,239,0.06)' },
+      ],
+    },
+    {
+      name: 'Tajamul Khan',
+      image: '/scd/speakers/Tajamul_khan.png',
+      role: 'Senior Data Scientist @ Eastman',
+      extra: 'Ex - Google, Amazon | MITian',
+      badge: 'Top 1% Data Scientist (Worldwide)',
+      topic: 'Entering the Top 1%: Building a FAANG-Ready Skillset in AI & Data Science',
+      blob: {
+        radius: '55% 45% 60% 40% / 40% 55% 45% 60%',
+        w: 175, h: 215,
+      },
+      shapes: [
+        { w: '70%', h: '85%', top: '-2%', left: '45%', radius: '55% 45% 50% 50% / 45% 55% 50% 50%', from: 'rgba(99,102,241,0.16)', to: 'rgba(139,92,246,0.1)' },
+        { w: '50%', h: '60%', top: '15%', left: '58%', radius: '50% 50% 45% 55% / 60% 40% 60% 40%', from: 'rgba(99,102,241,0.08)', to: 'rgba(168,85,247,0.06)' },
+        { w: '40%', h: '50%', top: '5%', left: '30%', radius: '40% 60% 55% 45% / 50% 50% 50% 50%', from: 'rgba(139,92,246,0.07)', to: 'rgba(217,70,239,0.04)' },
+      ],
+    },
+    {
+      name: 'Avinash Reddy Thipparthi',
+      image: '/scd/speakers/Avinash_Reddy_Thipparthi.png',
+      role: 'Founder, Aviz Academy',
+      extra: 'AWS Community Builder (3x) | Docker Captain',
+      badge: 'Cloud & DevOps Architect | 14+ Years | 50,000+ Learners',
+      topic: 'AI Agents are the new apps: How AWS and AI are renewing software in 2026',
+      blob: {
+        radius: '45% 55% 40% 60% / 60% 45% 55% 40%',
+        w: 185, h: 210,
+      },
+      shapes: [
+        { w: '65%', h: '75%', top: '5%', left: '48%', radius: '60% 40% 55% 45% / 45% 55% 40% 60%', from: 'rgba(168,85,247,0.17)', to: 'rgba(139,92,246,0.11)' },
+        { w: '50%', h: '55%', top: '8%', left: '62%', radius: '40% 60% 50% 50% / 55% 45% 55% 45%', from: 'rgba(217,70,239,0.09)', to: 'rgba(99,102,241,0.05)' },
+      ],
+    },
+  ];
   const sponsors = [
     { name: 'AWS', isAnnounced: true, logo: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' },
     { name: 'Sponsor 2', isAnnounced: false },
@@ -643,28 +693,159 @@ const StudentCommunityDays = () => {
       {/* Speakers Section */}
       <section className="px-6 md:px-12 lg:px-24 py-24 border-y border-white/5">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Masterclass Speakers</h2>
-            <p className="text-gray-400 max-w-xl mx-auto">Learn from AWS Heroes, Community Builders, and industry veterans.</p>
-          </div>
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="text-center mb-16"
+          >
+            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet-400/30 bg-violet-500/10 backdrop-blur-md mb-6">
+              <svg className="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+              </svg>
+              <span className="text-violet-400 text-xs font-semibold tracking-wider uppercase">Masterclass Speakers</span>
+            </motion.div>
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+              Learn from the <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-violet-500 to-fuchsia-500">best minds</span> in cloud & AI
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-gray-400 max-w-2xl mx-auto text-lg">Industry leaders, AWS ambassadors, and builders who are shaping the future.</motion.p>
+          </motion.div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {speakers.map((id) => (
-              <motion.div 
-                key={id}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {speakers.map((speaker, idx) => (
+              <motion.div
+                key={idx}
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
-                className="relative aspect-[3/4] rounded-[2rem] overflow-hidden group border border-white/5 bg-white/5"
+                transition={{ delay: idx * 0.15, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative rounded-[2rem] overflow-hidden backdrop-blur-2xl bg-gradient-to-b from-white/[0.06] to-white/[0.01] border border-white/10 transition-all duration-500 hover:border-violet-400/40 hover:-translate-y-2 hover:shadow-[0_25px_60px_-15px_rgba(139,92,246,0.4),inset_0_0_50px_rgba(139,92,246,0.06)]"
               >
-                {/* Simulated blurred image base */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a] to-gray-900 blur-xl opacity-80 group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute inset-0 backdrop-blur-2xl bg-black/40 flex flex-col items-center justify-center p-6 text-center z-10">
-                  <div className="w-12 h-12 rounded-full border border-white/20 bg-white/10 mb-4 flex items-center justify-center backdrop-blur-md">
-                     <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                     </svg>
+                {/* Hover wash */}
+                <div className="absolute inset-0 bg-gradient-to-b from-violet-400/0 via-transparent to-fuchsia-500/0 group-hover:from-violet-400/[0.06] group-hover:to-fuchsia-500/[0.08] transition-all duration-700 pointer-events-none" />
+
+                {/* Grid texture */}
+                <div
+                  className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                  style={{
+                    backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+                    backgroundSize: '24px 24px',
+                  }}
+                />
+
+                {/* Image Container — per-speaker curvy bg shapes + morph animation */}
+                <div className="relative w-full flex justify-center pt-8 pb-2">
+                  {/* Background shapes — unique per speaker */}
+                  {speaker.shapes.map((s, si) => (
+                    <div
+                      key={si}
+                      className="absolute transition-all duration-700"
+                      style={{
+                        width: s.w,
+                        height: s.h,
+                        top: s.top,
+                        left: s.left,
+                        transform: 'translate(-50%, 0)',
+                        borderRadius: s.radius,
+                        background: `linear-gradient(135deg, ${s.from}, ${s.to})`,
+                        filter: si === 0 ? 'blur(1px)' : 'blur(2px)',
+                      }}
+                    />
+                  ))}
+
+                  {/* Curvy blob image — morphs on hover */}
+                  <div
+                    className="relative overflow-hidden z-10 speaker-blob"
+                    style={{
+                      width: speaker.blob.w,
+                      height: speaker.blob.h,
+                      borderRadius: speaker.blob.radius,
+                    }}
+                  >
+                    <img
+                      src={speaker.image}
+                      alt={speaker.name}
+                      className="w-full h-full object-cover object-top speaker-img"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-transparent opacity-50" />
                   </div>
-                  <h3 className="text-lg font-medium text-white/90">Mystery Guest</h3>
-                  <p className="text-sm text-gray-500 mt-2 font-mono">Will be announced soon</p>
+                </div>
+
+                {/* Info Section */}
+                <div className="relative px-5 pb-6 -mt-2">
+                  {/* Accent line */}
+                  <div className="mx-auto h-px w-12 bg-gradient-to-r from-transparent via-violet-400/60 to-transparent mb-5 group-hover:w-20 transition-all duration-500" />
+
+                  <h3 className="text-xl font-bold text-white mb-1 tracking-tight">{speaker.name}</h3>
+                  <p className="text-violet-400 text-sm font-semibold mb-2">{speaker.role}</p>
+                  <p className="text-gray-500 text-xs mb-1">{speaker.extra}</p>
+                  <p className="text-fuchsia-400/80 text-xs font-medium mb-4">{speaker.badge}</p>
+
+                  {/* Topic pill */}
+                  <div className="relative rounded-xl bg-white/[0.04] border border-white/[0.06] p-3.5 group-hover:border-violet-400/20 transition-colors duration-500">
+                    <div className="flex items-start gap-2.5">
+                      <svg className="w-4 h-4 text-violet-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                      </svg>
+                      <div>
+                        <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-gray-500 block mb-1">Topic</span>
+                        <p className="text-gray-300 text-xs leading-relaxed">{speaker.topic}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Community Partners Section */}
+      <section className="px-6 md:px-12 lg:px-24 py-24 border-t border-white/5">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet-400/30 bg-violet-500/10 backdrop-blur-md mb-6">
+              <svg className="w-4 h-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              <span className="text-violet-400 text-xs font-semibold tracking-wider uppercase">Community Partners</span>
+            </motion.div>
+
+            <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold mb-4">Built Together With</motion.h2>
+            <motion.p variants={fadeInUp} className="text-gray-400 mb-16 max-w-2xl mx-auto">Student communities and organizations powering the movement alongside us.</motion.p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {[
+              { name: 'The Student Spot', logo: '/scd/community_partners/thestudentspot_logo.png' },
+              { name: 'Linkedinspire', logo: '/scd/community_partners/linkedinspire_logo.png' },
+              { name: 'CodeQuesters', logo: '/scd/community_partners/codequesters_logo.png' },
+            ].map((partner, idx) => (
+              <motion.div
+                key={idx}
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+                transition={{ delay: idx * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative rounded-3xl overflow-hidden backdrop-blur-2xl bg-gradient-to-b from-white/[0.06] to-white/[0.01] border border-white/10 p-8 flex items-center justify-center min-h-[180px] transition-all duration-500 hover:border-violet-400/40 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_-15px_rgba(139,92,246,0.35),inset_0_0_40px_rgba(139,92,246,0.06)]"
+              >
+                {/* Golden hover wash */}
+                <div className="absolute inset-0 bg-gradient-to-b from-violet-400/0 via-transparent to-violet-500/0 group-hover:from-violet-400/[0.06] group-hover:to-violet-500/[0.08] transition-all duration-700 pointer-events-none" />
+
+                {/* Grid texture */}
+                <div
+                  className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                  style={{
+                    backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+                    backgroundSize: '24px 24px',
+                  }}
+                />
+
+                <div className="relative z-10 flex flex-col items-center justify-center">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-16 w-auto object-contain grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                  />
+                  <span className="mt-4 text-sm font-medium text-gray-500 group-hover:text-gray-300 transition-colors duration-500 tracking-wide">{partner.name}</span>
                 </div>
               </motion.div>
             ))}
@@ -673,7 +854,7 @@ const StudentCommunityDays = () => {
       </section>
 
       {/* Sponsors Section */}
-      <section className="px-6 md:px-12 lg:px-24 py-24">
+      <section className="px-6 md:px-12 lg:px-24 py-24 border-t border-white/5">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Partners & Sponsors</h2>
           <p className="text-gray-400 mb-16 max-w-2xl mx-auto">Backed by the best in the industry to bring this experience to you.</p>

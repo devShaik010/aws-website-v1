@@ -65,3 +65,19 @@
   height: auto;
   transform: translate(-50%, -50%) scale(1.1);
 }
+
+/* Speaker blob hover float */
+@keyframes blobFloat {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.group:hover .speaker-blob {
+  animation: blobFloat 2.5s ease-in-out infinite;
+}
+
+.group:hover .speaker-img {
+  transform: scale(1.03);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
